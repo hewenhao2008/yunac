@@ -267,7 +267,7 @@
                                     <div class="btn-group" id="toolbar">
                                         <a class="btn btn-circle blue" href="javascript:;" data-toggle="dropdown" aria-expanded="false">
                                             <!-- <i class="fa fa-user"></i> 设备管理 -->
-                                            <i class="iconfont icon-peizhi" style="font-size: 14px"></i> 设备管理
+                                            <i class="iconfont icon-gongneng"></i> 设备管理
                                             <i class="fa fa-angle-down"></i>
                                         </a>
                                         <ul class="dropdown-menu">
@@ -739,7 +739,7 @@
                 valign: 'middle',
                 sortable: false,
                 formatter: function(value, row, index) {
-                    var info = '<a class="detail btn blue btn-circle btn-outline" style="margin-right: 10px" href="javascript:void(0)" >' + '<i class="fa  fa-list-ul"></i>' + '详情' + '</a>';
+                    var info = '<a class="setting btn blue btn-circle btn-outline" style="margin-right: 10px" href="javascript:void(0)" >' + '<i class="iconfont icon-peizhi" style="margin-right: 5px;"></i>' + '配置' + '</a>';
                     return (info);
                 },
                 events: 'operateEvents'
@@ -1063,6 +1063,23 @@
         'click .editGroup': function(e, value, row, index) {
             e.preventDefault();
             $("#group").modal();
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // 单台设备配置
+    window.operateEvents = {
+        'click .setting': function(e, value, row, index) {
+            e.preventDefault();
+            App.blockUI({
+                // target: $("#connectDev"),
+                boxed: true,
+                message: '获取当前配置中...',
+            });
+            window.setTimeout(function() {
+                App.unblockUI();
+                window.location.href = "./setting.html";
+            }, 3000);
+
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
