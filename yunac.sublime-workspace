@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"js",
+				"js.cookie-2.1.4.min.js"
+			],
+			[
 				"margin",
 				"margin-top"
 			],
@@ -92,19 +96,20 @@
 	"buffers":
 	[
 		{
-			"file": "html/setting.html",
+			"file": "server.js",
 			"settings":
 			{
-				"buffer_size": 21292,
+				"buffer_size": 387,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.js",
+			"file": "html/index.html",
 			"settings":
 			{
-				"buffer_size": 25530,
+				"buffer_size": 53508,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -193,7 +198,7 @@
 	},
 	"console":
 	{
-		"height": 192.0,
+		"height": 268.0,
 		"history":
 		[
 			"ggg",
@@ -214,14 +219,19 @@
 	"expanded_folders":
 	[
 		"/D/Project/web/yunac",
-		"/D/Project/web/yunac/assets/global/plugins",
-		"/D/Project/web/yunac/assets/global/plugins/iconfont",
 		"/D/Project/web/yunac/html"
 	],
 	"file_history":
 	[
-		"/D/Project/web/yunac/html/setting.html",
+		"/D/Project/web/yunac/package.json",
 		"/D/Project/web/yunac/html/index.html",
+		"/D/Project/web/yunac/server.js",
+		"/D/Project/web/yunac/html/cookieTest.html",
+		"/D/Project/web/yunac/assets/global/plugins/js.cookie-2.1.4.js",
+		"/C/Users/zjj/Desktop/js.cookie-2.1.4.min.js",
+		"/D/Project/web/yunac/html/setting.html",
+		"/D/Project/web/yunac/html/wifisetting.html",
+		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.js",
 		"/D/Project/web/yunac/html/gps.html",
 		"/D/Project/web/myapp/views/index.ejs",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/admin_1/index.html",
@@ -340,14 +350,7 @@
 		"/D/React/reactJs/.babelrc",
 		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/npm/npm.sublime-settings",
 		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/User/npm.sublime-settings",
-		"/D/React/reactJs/reactjs.sublime-project",
-		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/User/Localization.sublime-settings",
-		"/D/React/test/aaa.html",
-		"/D/React/test/test.sublime-project",
-		"/D/React/test/index.html",
-		"/D/React/test/index.js",
-		"/D/React/test/.idea/workspace.xml",
-		"/D/React/reactJs/.idea/reactJs.iml"
+		"/D/React/reactJs/reactjs.sublime-project"
 	],
 	"find":
 	{
@@ -366,6 +369,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"event",
+			"iconfont",
 			"overlay",
 			"saveMarker",
 			"../assets",
@@ -418,26 +423,26 @@
 			[
 				{
 					"buffer": 0,
-					"file": "html/setting.html",
-					"semi_transient": true,
+					"file": "server.js",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 21292,
+						"buffer_size": 387,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								194,
-								194
+								384,
+								384
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"auto_complete": false,
+							"is_init_dirty_state": false,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -448,30 +453,32 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.js",
+					"file": "html/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 25530,
+						"buffer_size": 53508,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7845,
-								7859
+								42258,
+								42281
 							]
 						],
 						"settings":
 						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
+							"auto_complete": false,
+							"is_init_dirty_state": false,
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
-						"translation.y": 5184.0,
+						"translation.x": 0.0,
+						"translation.y": 23848.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
