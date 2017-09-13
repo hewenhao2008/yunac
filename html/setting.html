@@ -180,10 +180,10 @@
                             <div class="tabbable-line boxless tabbable-reversed">
                                 <ul class="nav nav-tabs" id="mytab">
                                     <li>
-                                        <a href="#tab1" data-toggle="tab"> 2.4G配置 </a>
+                                        <a href="#tab1" data-toggle="tab"> 2.4G无线配置(wlan0) </a>
                                     </li>
                                     <li>
-                                        <a href="#tab2" data-toggle="tab"> 5.8G配置 </a>
+                                        <a href="#tab2" data-toggle="tab"> 5.8G配置(wlan1) </a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
@@ -275,12 +275,14 @@
                 align: 'center', // 水平居中
                 valign: 'middle', // 垂直居中
                 sortable: true, //启用排序
+                visible: true,
             }, {
                 field: 'wifiSwitch',
                 title: '无线开关',
                 align: 'center',
                 valign: 'middle',
                 sortable: true,
+                visible: true,
                 formatter: function(value, row, index) {
                     var result = '';
                     if (value == 'On') {
@@ -298,30 +300,35 @@
                 align: 'center', // 水平居中
                 valign: 'middle', // 垂直居中
                 sortable: true,
+                visible: true,
             }, {
                 field: 'wifiProtocol',
                 title: '无线协议',
                 align: 'center', // 水平居中
                 valign: 'middle', // 垂直居中
                 sortable: true,
+                visible: true,
             }, {
                 field: 'wifiBandWidth',
                 title: '无线频宽',
                 align: 'center', // 水平居中
                 valign: 'middle', // 垂直居中
                 sortable: true,
+                visible: true,
             }, {
                 field: 'wifiPower',
                 title: '无线功率',
                 align: 'center', // 水平居中
                 valign: 'middle', // 垂直居中
                 sortable: true,
+                visible: true,
             }, {
                 field: 'ssidSwitch',
                 title: 'SSID显示',
                 align: 'center', // 水平居中
                 valign: 'middle', // 垂直居中
                 sortable: true,
+                visible: true,
                 formatter: function(value, row, index) {
                     var result = '';
                     if (value == 'On') {
@@ -339,6 +346,7 @@
                 align: 'center', // 水平居中
                 valign: 'middle', // 垂直居中
                 sortable: true,
+                visible: true,
                 formatter: function(value, row, index) {
                     var result = '';
                     if (value == 'On') {
@@ -347,6 +355,40 @@
                         result = '<span class="label label-sm label-danger">' + value + '</span>';
                     } else {
                         result = value
+                    }
+                    return result;
+                }
+            }, {
+                field: 'wifiPwd',
+                title: '无线密码',
+                align: 'center', // 水平居中
+                valign: 'middle', // 垂直居中
+                sortable: true,
+                visible: false,
+                formatter: function(value, row, index) {
+                    // 限定12个字符以内
+                    var result = "";
+                    if (getLength(value) > 12) {
+                        result = '<div title=' + value + '>' + cutstr(value, 12) + '</div>';
+                    } else {
+                        result = value;
+                    }
+                    return result;
+                }
+            }, , {
+                field: 'pwdFormat',
+                title: '无线密码',
+                align: 'center', // 水平居中
+                valign: 'middle', // 垂直居中
+                sortable: true,
+                visible: false,
+                formatter: function(value, row, index) {
+                    // 限定12个字符以内
+                    var result = "";
+                    if (getLength(value) > 12) {
+                        result = '<div title=' + value + '>' + cutstr(value, 12) + '</div>';
+                    } else {
+                        result = value;
                     }
                     return result;
                 }
@@ -373,7 +415,8 @@
                 wifiBandWidth: '20MHz',
                 wifiPower: '10',
                 ssidSwitch: 'On',
-                pwdSwitch: 'Off',
+                pwdSwitch: 'On',
+                wifiPwd: 'DB24',
             },
             {
                 ssid: '-',
@@ -384,6 +427,7 @@
                 wifiPower: '-',
                 ssidSwitch: '-',
                 pwdSwitch: '-',
+                wifiPwd: '-'
             }, {
                 ssid: 'DB26',
                 wifiSwitch: 'On',
@@ -392,7 +436,8 @@
                 wifiBandWidth: '20MHz',
                 wifiPower: '10',
                 ssidSwitch: 'On',
-                pwdSwitch: 'Off',
+                pwdSwitch: 'On',
+                wifiPwd: 'DB567测试1234567'
             }
         ];
         $('#tableTab0').bootstrapTable('append', data);
@@ -405,6 +450,36 @@
             window.location.href = "./wifisetting.html";
         })
     })
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // 
+    function getLength(str) {
+        return str.replace(/[\u0391-\uFFE5]/g, "aa").length;
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // 
+    function cutstr(str, len) {
+        var str_length = 0;
+        var str_len = 0;
+        var str_cut = new String();
+        str_len = str.length;
+        for (var i = 0; i < str_len; i++) {
+            var a = str.charAt(i);
+            str_length++;
+            if (escape(a).length > 4) {
+                //中文字符的长度经编码之后大于4  
+                str_length++;
+            }
+            str_cut = str_cut.concat(a);
+            if (str_length >= len) {
+                str_cut = str_cut.concat("...");
+                return str_cut;
+            }
+        }
+        //如果给定字符串小于指定长度，则返回源字符串；  
+        if (str_length < len) {
+            return str;
+        }
+    }
     </script>
 </body>
 

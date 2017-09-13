@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"s",
+				"style\tAttr"
+			],
+			[
 				"loca",
 				"location"
 			],
@@ -14,10 +22,6 @@
 			[
 				"add",
 				"addSSID"
-			],
-			[
-				"margin",
-				"margin-right"
 			],
 			[
 				"Pro",
@@ -88,11 +92,19 @@
 	"buffers":
 	[
 		{
-			"file": "html/index.html",
+			"file": "html/setting.html",
 			"settings":
 			{
-				"buffer_size": 52853,
+				"buffer_size": 21292,
 				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.js",
+			"settings":
+			{
+				"buffer_size": 25530,
 				"line_ending": "Unix"
 			}
 		}
@@ -181,7 +193,7 @@
 	},
 	"console":
 	{
-		"height": 227.0,
+		"height": 192.0,
 		"history":
 		[
 			"ggg",
@@ -202,10 +214,15 @@
 	"expanded_folders":
 	[
 		"/D/Project/web/yunac",
+		"/D/Project/web/yunac/assets/global/plugins",
+		"/D/Project/web/yunac/assets/global/plugins/iconfont",
 		"/D/Project/web/yunac/html"
 	],
 	"file_history":
 	[
+		"/D/Project/web/yunac/html/setting.html",
+		"/D/Project/web/yunac/html/index.html",
+		"/D/Project/web/yunac/html/gps.html",
 		"/D/Project/web/myapp/views/index.ejs",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/admin_1/index.html",
 		"/D/Project/web/frameMini2/html_mini/index - 副本.html",
@@ -330,10 +347,7 @@
 		"/D/React/test/index.html",
 		"/D/React/test/index.js",
 		"/D/React/test/.idea/workspace.xml",
-		"/D/React/reactJs/.idea/reactJs.iml",
-		"/C/Users/zjj/Desktop/react-devtools-2.5.0/shells/chrome/build.js",
-		"/D/React/test/.idea/dictionaries/zjj.xml",
-		"/D/React/reactJs/.idea/workspace.xml"
+		"/D/React/reactJs/.idea/reactJs.iml"
 	],
 	"find":
 	{
@@ -399,35 +413,65 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "html/index.html",
-					"semi_transient": false,
+					"file": "html/setting.html",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 52853,
+						"buffer_size": 21292,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								194,
+								194
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 25530,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7845,
+								7859
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 5184.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
