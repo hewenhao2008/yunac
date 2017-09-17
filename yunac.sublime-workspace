@@ -96,21 +96,20 @@
 	"buffers":
 	[
 		{
-			"file": "server.js",
-			"settings":
-			{
-				"buffer_size": 387,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "html/index.html",
 			"settings":
 			{
 				"buffer_size": 53508,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/pages/scripts/ui-blockui.js",
+			"settings":
+			{
+				"buffer_size": 4393,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -223,9 +222,9 @@
 	],
 	"file_history":
 	[
+		"/D/Project/web/yunac/server.js",
 		"/D/Project/web/yunac/package.json",
 		"/D/Project/web/yunac/html/index.html",
-		"/D/Project/web/yunac/server.js",
 		"/D/Project/web/yunac/html/cookieTest.html",
 		"/D/Project/web/yunac/assets/global/plugins/js.cookie-2.1.4.js",
 		"/C/Users/zjj/Desktop/js.cookie-2.1.4.min.js",
@@ -369,6 +368,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"window.href",
+			"window.",
+			"updateDlg",
 			"event",
 			"iconfont",
 			"overlay",
@@ -418,41 +420,11 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "server.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 387,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								384,
-								384
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"is_init_dirty_state": false,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "html/index.html",
 					"semi_transient": false,
 					"settings":
@@ -464,8 +436,8 @@
 						"selection":
 						[
 							[
-								42258,
-								42281
+								19795,
+								19795
 							]
 						],
 						"settings":
@@ -478,10 +450,41 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 23848.0,
+						"translation.y": 9081.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/pages/scripts/ui-blockui.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4393,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1944.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

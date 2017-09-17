@@ -97,7 +97,6 @@
                             <a href="javascript:;" class="nav-link nav-toggle">
                             <i class="icon-home"></i>
                             <span class="title">AP管理</span>
-                            <!-- <span class="selected"></span> -->
                             <span class="arrow"></span>
                         </a>
                             <ul class="sub-menu">
@@ -122,20 +121,18 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item  ">
-                            <a href="javascript:;" class="nav-link nav-toggle">
+<!-- <li class="nav-item  ">
+    <a href="javascript:;" class="nav-link nav-toggle">
                                 <i class="icon-diamond"></i>
                                 <span class="title">用户管理</span>
-                                <!-- <span class="arrow"></span> -->
                             </a>
-                        </li>
-                        <li class="nav-item  ">
-                            <a href="javascript:;" class="nav-link nav-toggle">
+</li>
+<li class="nav-item  ">
+    <a href="javascript:;" class="nav-link nav-toggle">
                             <i class="icon-diamond"></i>
                             <span class="title">代理商管理</span>
-                            <!-- <span class="arrow"></span> -->
                         </a>
-                        </li>
+</li> -->
                     </ul>
                     <!-- END SIDEBAR MENU -->
                 </div>
@@ -180,10 +177,10 @@
                             <div class="tabbable-line boxless tabbable-reversed">
                                 <ul class="nav nav-tabs" id="mytab">
                                     <li>
-                                        <a href="#tab1" data-toggle="tab"> 2.4G无线配置(wlan0) </a>
+                                        <a href="#tab1" data-toggle="tab"> 2.4G配置 </a>
                                     </li>
                                     <li>
-                                        <a href="#tab2" data-toggle="tab"> 5.8G配置(wlan1) </a>
+                                        <a href="#tab2" data-toggle="tab"> 5.8G配置 </a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
@@ -212,7 +209,20 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane" id="tab2">
-                                        tab2
+                                        <div class="portlet light portlet-fit portlet-datatable bordered">
+                                            <div class="portlet-title">
+                                                <div class="caption">
+                                                    <i class="iconfont icon-wuxian font-blue"></i>
+                                                    <span class="caption-subject font-blue sbold uppercase">SSID管理</span>
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body">
+                                                <!-- BEGIN FORM-->
+                                                <form action="#" class="form-horizontal form-bordered">
+                                                </form>
+                                                <!-- END FORM-->
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -375,23 +385,27 @@
                     }
                     return result;
                 }
-            }, , {
+            }, {
                 field: 'pwdFormat',
-                title: '无线密码',
+                title: '加密方式',
                 align: 'center', // 水平居中
                 valign: 'middle', // 垂直居中
                 sortable: true,
                 visible: false,
-                formatter: function(value, row, index) {
-                    // 限定12个字符以内
-                    var result = "";
-                    if (getLength(value) > 12) {
-                        result = '<div title=' + value + '>' + cutstr(value, 12) + '</div>';
-                    } else {
-                        result = value;
-                    }
-                    return result;
-                }
+            }, {
+                field: 'pwdSuanfa',
+                title: '加密算法',
+                align: 'center', // 水平居中
+                valign: 'middle', // 垂直居中
+                sortable: true,
+                visible: false,
+            }, {
+                field: 'vlanID',
+                title: 'vlanID',
+                align: 'center', // 水平居中
+                valign: 'middle', // 垂直居中
+                sortable: true,
+                visible: false,
             }, {
                 field: 'operate',
                 title: '操作',
@@ -417,6 +431,9 @@
                 ssidSwitch: 'On',
                 pwdSwitch: 'On',
                 wifiPwd: 'DB24',
+                pwdFormat: 'WPA/WPA2混合',
+                pwdSuanfa: 'AES/TKIP混合',
+                vlanID: '13'
             },
             {
                 ssid: '-',
@@ -427,7 +444,10 @@
                 wifiPower: '-',
                 ssidSwitch: '-',
                 pwdSwitch: '-',
-                wifiPwd: '-'
+                wifiPwd: '-',
+                pwdFormat: 'WPA2',
+                pwdSuanfa: 'AES',
+                vlanID: '-'
             }, {
                 ssid: 'DB26',
                 wifiSwitch: 'On',
@@ -437,7 +457,10 @@
                 wifiPower: '10',
                 ssidSwitch: 'On',
                 pwdSwitch: 'On',
-                wifiPwd: 'DB567测试1234567'
+                wifiPwd: 'DB567测试1234567',
+                pwdFormat: 'WPA',
+                pwdSuanfa: 'TKIP',
+                vlanID: '10'
             }
         ];
         $('#tableTab0').bootstrapTable('append', data);
@@ -450,6 +473,19 @@
             window.location.href = "./wifisetting.html";
         })
     })
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // 编辑SSID
+    window.operateEvents = {
+        'click .edit': function(e, value, row, index) {
+            window.location.href = "./wifisetting.html";
+        },
+        'click .delete': function(e, value, row, index) {
+            alert("删除第" + (index + 1) + "行");
+            var ssids = [];
+            ssids.push(row.ssid);
+            $('#tableTab0').bootstrapTable('remove', { field: 'ssid', values: ssids });
+        }
+    }
     ////////////////////////////////////////////////////////////////////////////////////////////////
     // 
     function getLength(str) {
