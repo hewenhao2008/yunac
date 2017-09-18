@@ -695,6 +695,13 @@
                     return (strCh1 + strCh2);
                 },
             }, {
+                field: 'runMode',
+                title: '运行模式',
+                align: 'center',
+                valign: 'middle',
+                sortable: true,
+                visible: false,
+            }, {
                 field: 'connectDev',
                 title: '连接终端数',
                 align: 'center',
@@ -783,7 +790,8 @@
             gpsDev: '未定位',
             version: '20170904-V1.0.3',
             regTime: '2017-08-30',
-            updateTime: '2017-08-30'
+            updateTime: '2017-08-30',
+            runMode: '路由',
         }, {
             mac: 'ef:54:1r:bb:t1:23',
             name: '五号食堂一楼',
@@ -800,7 +808,8 @@
             gpsDev: '已定位',
             version: '20170904-V1.0.3',
             regTime: '2017-08-30',
-            updateTime: '2017-09-04'
+            updateTime: '2017-09-04',
+            runMode: 'AP',
         }, {
             mac: '0f:8y:bt:mn:t0:54',
             name: '3号写字楼18楼楼道口',
@@ -817,7 +826,8 @@
             gpsDev: '未定位',
             version: '20170904-V1.0.3',
             regTime: '2017-08-30',
-            updateTime: '2017-09-04'
+            updateTime: '2017-09-04',
+            runMode: '路由',
         }];
         for (var i = 0; i < 20; i++) {
             data.push({
@@ -836,7 +846,8 @@
                 gpsDev: '已定位',
                 version: '20170904-V1.0.3',
                 regTime: '2017-08-30',
-                updateTime: '2017-09-04'
+                updateTime: '2017-09-04',
+                runMode: 'AP',
             })
         }
         $('#mytable').bootstrapTable('append', data);
