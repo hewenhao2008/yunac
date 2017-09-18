@@ -113,13 +113,25 @@
                                     <span class="selected"></span>
                                 </a>
                                 </li>
-                                <li class="nav-item start ">
-                                    <a href="version.html" class="nav-link ">
-                                    <i class="iconfont icon-icon_shengji" style="font-size: 17px"></i>
-                                    <span class="title">固件升级</span>
-                                </a>
-                                </li>
                             </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="tanzhen.html" class="nav-link nav-toggle">
+                                <i class="iconfont icon-tanzhen" style="font-size: 17px"></i>
+                                <span class="title">探针管理</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="version.html" class="nav-link nav-toggle">
+                                <i class="iconfont icon-icon_shengji" style="font-size: 17px"></i>
+                                <span class="title">固件管理</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="authServer.html" class="nav-link nav-toggle">
+                                <i class="iconfont icon-fuwuqi" style="font-size: 20px"></i>
+                                <span class="title">认证服务器管理</span>
+                            </a>
                         </li>
                         <!--                         <li class="nav-item  ">
                             <a href="javascript:;" class="nav-link nav-toggle">
@@ -205,7 +217,7 @@
                                             <i class="fa fa-plus"></i> 新增配置文件
                                         </a>
                                     </div>
-                                    <table id="mytable"></table>
+                                    <table id="mytable2"></table>
                                 </div>
                             </div>
                             <!-- END EXAMPLE TABLE PORTLET-->
@@ -292,7 +304,7 @@
         // Cookies.set('mode', 'abc');
         // var abc = Cookies.get('mode');
         // 初始化表格
-        $('#mytable').bootstrapTable({
+        $('#mytable2').bootstrapTable({
             // search: true, // 显示搜索框
             // sortName: 'mac', // 初始化排序字段
             // url: 'https://weiquaninfo.cn/json/data.json',   
@@ -388,7 +400,7 @@
             regTime: '2017-08-30',
             updateTime: '2017-09-04'
         }];
-        $('#mytable').bootstrapTable('append', data);
+        $('#mytable2').bootstrapTable('append', data);
         $("#addSetting").click(function(event) {
             event.preventDefault();
             window.location.href = "./setting.html";

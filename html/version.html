@@ -94,30 +94,44 @@
                         <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
                         <!-- END SIDEBAR TOGGLER BUTTON -->
                         <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
-                        <li class="nav-item start active">
+                        <li class="nav-item start ">
                             <a href="javascript:;" class="nav-link nav-toggle">
-                                <i class="iconfont icon-route" style="font-size: 19px;"></i>
-                                <span class="title">AP管理</span>
+                                <i class="iconfont icon-shebei" style="font-size: 20px;"></i>
+                                <span class="title">设备管理</span>
                                 <span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item start ">
                                     <a href="index.html" class="nav-link ">
-                                    <i class="iconfont icon-liebiao" style="font-size: 17px;"></i>
-                                    <span class="title">AP列表</span>
+                                    <i class="iconfont icon-route" style="font-size: 20px;"></i>
+                                    <span class="title">AP管理</span>
                                 </a>
                                 </li>
-                                <li class="nav-item start ">
-                                    <a href="peizhi.html" class="nav-link ">
-                                    <i class="iconfont icon-xiafapeizhi2" style="font-size: 17px"></i>
-                                    <span class="title">配置文件</span>
-                                    
+                                <li class="nav-item">
+                                    <a href="tanzhen.html" class="nav-link ">
+                                    <i class="iconfont icon-tanzhen" style="font-size: 20px;"></i>
+                                    <span class="title">探针管理</span>
                                 </a>
                                 </li>
-                                <li class="nav-item start open">
+                                <li class="nav-item">
+                                    <a href="authServer.html" class="nav-link ">
+                                    <i class="iconfont icon-fuwuqi" style="font-size: 20px;"></i>
+                                    <span class="title">认证服务器管理</span>
+                                </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="iconfont icon-xitong" style="font-size: 20px"></i>
+                                <span class="title">系统管理</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu ">
+                                <li class="nav-item open">
                                     <a href="version.html" class="nav-link ">
-                                    <i class="iconfont icon-icon_shengji" style="font-size: 17px"></i>
-                                    <span class="title">固件升级</span>
+                                    <i class="iconfont icon-icon_shengji" style="font-size: 20px;"></i>
+                                    <span class="title">固件管理</span>
                                     <span class="selected"></span>
                                 </a>
                                 </li>
@@ -306,6 +320,15 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
+                                        <label class="control-label col-md-3">固件类型</label>
+                                        <div class="col-md-6">
+                                            <select class="selectpicker">
+                                                <option>AP</option>
+                                                <option>探针</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
                                         <label class="control-label col-md-3">上传固件</label>
                                         <div class="col-md-6">
                                             <div class="fileinput fileinput-new" data-provides="fileinput">
@@ -395,6 +418,13 @@
                     valign: 'middle', // 垂直居中
                     sortable: true, //启用排序
                     visible: true,
+                }, { // 表头
+                    field: 'setType', // 域名
+                    title: '固件类型', //文字名称
+                    align: 'center', // 水平居中
+                    valign: 'middle', // 垂直居中
+                    sortable: true, //启用排序
+                    visible: true,
                 }, {
                     field: 'remarks',
                     title: '备注',
@@ -443,14 +473,17 @@
                 setName: 'SSID修改',
                 remarks: '五号食堂一楼',
                 regTime: '2017-08-30',
+                setType: 'AP',
             }, {
                 setName: 'SSID隐藏',
                 remarks: '五号食堂一楼',
                 regTime: '2017-08-30',
+                setType: '探针',
             }, {
                 setName: '5.8G配置',
                 remarks: '3号写字楼18楼楼道口',
                 regTime: '2017-08-30',
+                setType: 'AP',
             }];
             $('#mytable').bootstrapTable('append', data);
             $("#addSetting").click(function(event) {
