@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"tan",
+				"tanzhenUser.html"
+			],
+			[
+				"magin",
+				"margin-bottom"
+			],
+			[
+				"gr",
+				"group"
+			],
+			[
 				"ac",
 				"active"
 			],
@@ -108,30 +120,21 @@
 	"buffers":
 	[
 		{
+			"file": "html/apUser.html",
+			"settings":
+			{
+				"buffer_size": 31706,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "html/index.html",
 			"settings":
 			{
-				"buffer_size": 60514,
+				"buffer_size": 67364,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "html/setting.html",
-			"settings":
-			{
-				"buffer_size": 33759,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "html/peizhi.html",
-			"settings":
-			{
-				"buffer_size": 23632,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
 			}
 		}
 	],
@@ -240,22 +243,27 @@
 	"expanded_folders":
 	[
 		"/D/Project/web/yunac",
-		"/D/Project/web/yunac/assets/global",
-		"/D/Project/web/yunac/assets/global/plugins",
-		"/D/Project/web/yunac/assets/global/plugins/iconfont",
-		"/D/Project/web/yunac/html"
+		"/D/Project/web/yunac/html",
+		"/D/Project/web/yunac/node_modules"
 	],
 	"file_history":
 	[
-		"/D/Project/web/yunac/assets/global/plugins/iconfont/iconfont.css",
-		"/D/Project/web/yunac/html/authServer.html",
-		"/D/Project/web/yunac/html/tanzhen.html",
-		"/D/Project/web/yunac/html/version.html",
-		"/D/Project/web/yunac/html/peizhi.html",
+		"/D/Project/web/yunac/html/tanzhenUser.html",
 		"/D/Project/web/yunac/html/index.html",
-		"/D/Project/web/yunac/html/setting.html",
-		"/D/Project/web/yunac/html/wifisetting.html",
+		"/D/Project/web/yunac/html/apUser.html",
+		"/D/Project/web/yunac/html/version.html",
+		"/D/Project/web/yunac/html/authServer.html",
 		"/D/Project/web/yunac/html/group.html",
+		"/D/Project/web/yunac/html/log.html",
+		"/D/Project/web/yunac/html/tanzhen.html",
+		"/D/Project/web/bootstrap-daterangepicker/demo.html",
+		"/D/Project/web/bootstrap-daterangepicker/daterangepicker.js",
+		"/D/Project/web/yunac/html/test.html",
+		"/D/Project/web/yunac/html/test",
+		"/D/Project/web/yunac/html/peizhi.html",
+		"/D/Project/web/yunac/html/setting.html",
+		"/D/Project/web/yunac/assets/global/plugins/iconfont/iconfont.css",
+		"/D/Project/web/yunac/html/wifisetting.html",
 		"/D/Project/web/yunac/html/group.js",
 		"/D/Project/web/yunac/assets/global/plugins/ie8.fix.min.js",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/pages/scripts/ui-blockui.js",
@@ -367,14 +375,7 @@
 		"/D/React/reactJs/src/App2.js",
 		"/C/Users/zjj/Desktop/oui.txt",
 		"/D/React/reactJs/public/components/Home.js",
-		"/D/React/reactJs/server.js",
-		"/D/React/reactJs/src/components/about.js",
-		"/D/React/reactJs/src/components/home.js",
-		"/D/React/reactJs/src/components/Home.js",
-		"/D/React/reactJs/src/index.html",
-		"/D/React/reactJs/src/npm-debug.log",
-		"/D/React/reactJs/.eslintrc.js",
-		"/D/React/reactJs/src/index.js"
+		"/D/React/reactJs/server.js"
 	],
 	"find":
 	{
@@ -394,6 +395,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"addBlackBtn",
+			"addBlackDlg",
+			"addBlack",
+			"setDevsParam",
+			"gpsEvents",
+			"groupEvents",
+			"userEvents",
+			"devNameEvents",
+			"label",
+			"config-demo",
+			"devName",
+			"devNameEvents",
+			"search",
+			"delDlg",
+			"toolbar2",
+			"toolbar",
 			"a:first",
 			"mytab",
 			"mytable",
@@ -477,99 +494,73 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "html/index.html",
+					"file": "html/apUser.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 60514,
+						"buffer_size": 31706,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12502,
-								12502
+								14078,
+								14078
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
+							"is_init_dirty_state": false,
+							"origin_encoding": "UTF-8",
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3720.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "html/setting.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 33759,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								17569,
-								17569
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 8900.0,
+						"translation.y": 6826.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "html/peizhi.html",
+					"buffer": 1,
+					"file": "html/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 23632,
+						"buffer_size": 67364,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11764,
-								13415
+								14444,
+								14444
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
+							"is_init_dirty_state": false,
+							"origin_encoding": "UTF-8",
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6248.0,
+						"translation.y": 574.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]

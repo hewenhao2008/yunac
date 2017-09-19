@@ -21,6 +21,7 @@
     <link href="../assets/global/plugins/bootstrap-table-master/bootstrap-table.min.css" type="text/css" rel="stylesheet">
     <link href="../assets/global/plugins/bootstrap-select/css/bootstrap-select.min.css" type="text/css" rel="stylesheet">
     <link href="../assets/global/plugins/bootstrap-sweetalert/sweetalert.css" type="text/css" rel="stylesheet">
+    <link href="../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet" type="text/css" />
 </head>
 <!-- END HEAD -->
 
@@ -93,7 +94,7 @@
                         <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
                         <!-- END SIDEBAR TOGGLER BUTTON -->
                         <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
-                        <li class="nav-item start active">
+                        <li class="nav-item start">
                             <a href="javascript:;" class="nav-link nav-toggle">
                                 <i class="iconfont icon-shebei" style="font-size: 20px;"></i>
                                 <span class="title">设备管理</span>
@@ -118,26 +119,26 @@
                                     <span class="title">认证服务器管理</span>
                                 </a>
                                 </li>
-                                <li class="nav-item open">
+                                <li class="nav-item">
                                     <a href="group.html" class="nav-link ">
                                     <i class="iconfont icon-fenzu" style="font-size: 20px;"></i>
                                     <span class="title">分组管理</span>
-                                    <span class="selected"></span>
                                 </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a href="javascript:;" class="nav-link nav-toggle">
                                 <i class="iconfont icon-yonghuguanli2" style="font-size: 20px"></i>
                                 <span class="title">用户管理</span>
                                 <span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
-                                <li class="nav-item">
+                                <li class="nav-item open">
                                     <a href="apUser.html" class="nav-link ">
                                     <i class="iconfont icon-yonghuguanli1" style="font-size: 20px;"></i>
                                     <span class="title">AP用户</span>
+                                    <span class="selected"></span>
                                 </a>
                                 </li>
                                 <li class="nav-item">
@@ -218,39 +219,119 @@
                         <ul class="page-breadcrumb">
                             <li>
                                 <!--<a href="javascript:;">管理首页</a>-->
-                                <span>设备管理</span>
-                                <i class="fa fa-circle"></i>
+                                <span>AP用户管理</span>
                             </li>
                             <li>
-                                <span>分组管理</span>
+                                <span></span>
                             </li>
                         </ul>
                     </div>
                     <!-- END PAGE BAR -->
                     <!-- BEGIN PAGE TITLE-->
-                    <h1 class="page-title">分组管理
-                        <small></small>
+                    <h1 class="page-title">AP用户管理
+                        <small>概况</small>
                     </h1>
                     <!-- END PAGE TITLE-->
-                    <div class="clearfix"></div>
-                    <!-- END DASHBOARD STATS 1-->
-                    <!-- BEGIN TABLE STATIC BASIC-->
-                    <!-- END TABLE STATIC BASIC-->
-                    <div class="row" id="connectDev">
-                        <div class="col-md-12 col-sm-12">
-                            <!-- BEGIN EXAMPLE TABLE PORTLET-->
-                            <div class="portlet light portlet-fit portlet-datatable bordered">
-                                <div class="portlet-title">
-                                    <div class="caption">
-                                        <i class="iconfont icon-liebiao" style="font-size: 17px;color:rgb(53,152,220);"></i>
-                                        <span class="caption-subject font-blue sbold uppercase">分组列表</span>
+                    <!-- BEGIN DASHBOARD STATS 1-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="tabbable-line boxless tabbable-reversed">
+                                <ul class="nav nav-tabs" id="mytab">
+                                    <li class="active"><a href="#tab1" data-toggle="tab">AP在线用户</a></li>
+                                    <li><a href="#tab2" data-toggle="tab">黑名单管理</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="tab1">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                <a class="dashboard-stat dashboard-stat-v2 green" href="#" id="devTotals">
+                                                    <div class="visual">
+                                                        <i class="fa fa-comments"></i>
+                                                    </div>
+                                                    <div class="details">
+                                                        <div class="number">
+                                                            <span data-counter="counterup" data-value="200">200</span>
+                                                        </div>
+                                                        <div class="desc">AP在线用户总数</div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <!-- END DASHBOARD STATS 1-->
+                                        <!-- BEGIN TABLE STATIC BASIC-->
+                                        <!-- END TABLE STATIC BASIC-->
+                                        <div class="row" id="connectDev">
+                                            <div class="col-md-12 col-sm-12">
+                                                <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                                                <div class="portlet light portlet-fit portlet-datatable bordered">
+                                                    <div class="portlet-title">
+                                                        <div class="caption">
+                                                            <i class="iconfont icon-liebiao" style="font-size: 17px;color:rgb(53,152,220);"></i>
+                                                            <span class="caption-subject font-blue sbold uppercase">用户列表</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="portlet-body">
+                                                        <form class="form-inline" role="form">
+                                                            <div class="form-group">
+                                                                <label class="sr-only" for="devMacSearch">mac</label>
+                                                                <input type="text" class="form-control" id="devMacSearch" placeholder="终端MAC">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="sr-only" for="devNameSearch">devNameSearch</label>
+                                                                <input type="text" class="form-control" id="devNameSearch" placeholder="终端类型">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="sr-only" for="userNameSearch">userName</label>
+                                                                <input type="text" class="form-control" id="userNameSearch" placeholder="终端品牌/型号">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="sr-only" for="devGroupSearch">devGroup</label>
+                                                                <input type="text" class="form-control" id="devGroupSearch" placeholder="终端IP">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="sr-only" for="ipaddressSearch">ipaddress</label>
+                                                                <input type="text" class="form-control" id="ipaddressSearch" placeholder="SSID名称">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="sr-only" for="ssidNameSearch">ssidName</label>
+                                                                <input type="text" class="form-control" id="ssidNameSearch" placeholder="连接频率">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="sr-only" for="versionSearch">version</label>
+                                                                <input type="text" class="form-control" id="versionSearch" placeholder="设备MAC">
+                                                            </div>
+                                                            <a href="javascript:;" class="btn btn-circle green" id="searchBegin">
+                                            <i class="fa fa-search" style="margin-right: 5px;"></i>查询 
+                                        </a>
+                                                            <a href="javascript:;" class="btn btn-circle red" id="searchReset">
+                                            <i class="fa fa-refresh" style="margin-right: 5px;"></i>复位 
+                                        </a>
+                                                        </form>
+                                                        <div class="btn-group" id="toolbar">
+                                                            <a class="btn btn-circle blue" href="javascript:;" data-toggle="dropdown" aria-expanded="false">
+                                                                <i class="iconfont icon-gongneng"></i> 用户管理
+                                                                <i class="fa fa-angle-down"></i>
+                                                            </a>
+                                                            <ul class="dropdown-menu">
+                                                                <li>
+                                                                    <a href="javascript:;" id="addBlack">
+                                                <i class="iconfont icon-xiafapeizhi2" style="font-size: 14px"></i> 加入黑名单 </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <table id="mytable"></table>
+                                                    </div>
+                                                </div>
+                                                <!-- END EXAMPLE TABLE PORTLET-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab2">
+                                        12345
                                     </div>
                                 </div>
-                                <div class="portlet-body">
-                                    <table id="mytable"></table>
-                                </div>
                             </div>
-                            <!-- END EXAMPLE TABLE PORTLET-->
                         </div>
                     </div>
                 </div>
@@ -266,20 +347,20 @@
         <!-- END CONTAINER -->
     </div>
     <!-- modal-dialog Begin -->
-    <div class="modal fade in" id="delDlg" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+    <div class="modal fade in" id="addBlackDlg" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title">删除分组</h4>
+                    <h4 class="modal-title">加入黑名单</h4>
                 </div>
                 <div class="modal-body">
-                    确认要删除此分组吗？
+                    确认要把已选中的终端加入黑名单吗？
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn red btn-outline" data-dismiss="modal">取消
                     </button>
-                    <button type="button" id="saveSetting" class="btn green" data-dismiss="modal" id="setDevParamOk">确认删除
+                    <button type="button" class="btn green" data-dismiss="modal" id="addBlackBtn">立即添加
                     </button>
                 </div>
             </div>
@@ -313,8 +394,8 @@
         // var abc = Cookies.get('mode');
         // 初始化表格
         $('#mytable').bootstrapTable({
-            search: true, // 显示搜索框
-            searchAlign: 'left',
+            // search: true, // 显示搜索框
+            // searchAlign: 'left',
             // sortName: 'mac', // 初始化排序字段
             // url: 'https://weiquaninfo.cn/json/data.json',   
             pagination: true, // 底部显示数量,
@@ -322,119 +403,200 @@
             pageSize: 5, //每页的记录行数
             pageList: [5, 10, 25, 50, 100], //可供选择的每页的行数
             striped: true,
-            // toolbar: '#toolbar',
+            toolbar: '#toolbar',
             showExport: true, // 导出（第三方）
             exportDataType: 'all', // 导出参数
             exportTypes: ['excel'], // 导出文件类型
             exportOptions: { // 导出选项
                 excelFileFormat: 'xlsx'
             },
-            // showColumns: true, // 显示列选择按钮
+            showColumns: true, // 显示列选择按钮
             // clickToSelect: true,
             columns: [{
-                field: 'name',
-                title: '分组名称',
+                field: 'state', // 必须要有，否则获取行会多出一个数据
+                align: 'center',
+                valign: 'middle',
+                checkbox: true,
+            }, { // 表头
+                field: 'mac', // 域名
+                title: '终端MAC', //文字名称
+                align: 'center', // 水平居中
+                valign: 'middle', // 垂直居中
+                sortable: true, //启用排序
+                width: '150px',
+                visible: true,
+            }, {
+                field: 'type',
+                title: '终端类型',
                 align: 'center',
                 valign: 'middle',
                 sortable: true,
                 visible: true,
-                formatter: function(value, row, index) {
-                    // 限定12个字符以内
-                    var result = "";
-                    if (getLength(value) > 12) {
-                        result = '<div title=' + value + '>' + '<a class="editName">' + cutstr(value, 12) + '</a></div>';
-                    } else {
-                        result = '<a class="editName">' + value + '</a>';
-                    }
-                    return result;
-                },
-                events: 'devNameEvents',
             }, {
-                field: 'devNum',
-                title: '关联设备数',
+                field: 'brand',
+                title: '终端品牌/型号',
+                align: 'center',
+                valign: 'middle',
+                sortable: true,
+                visible: true,
+            }, {
+                field: 'ip',
+                title: '终端IP',
                 align: 'center',
                 valign: 'middle',
                 sortable: true,
                 visible: true,
             }, {
                 field: 'remarks',
-                title: '分组说明',
+                title: '终端备注',
+                align: 'center',
+                valign: 'middle',
+                sortable: true,
+                visible: false,
+            }, {
+                field: 'netStatus',
+                title: '上线时间',
                 align: 'center',
                 valign: 'middle',
                 sortable: true,
                 visible: true,
             }, {
-                field: 'regTime',
-                title: '创建时间',
+                field: 'lastUpTime',
+                title: '在线时长',
                 align: 'center',
                 valign: 'middle',
                 sortable: true,
                 visible: true,
-                formatter: function(value, row, index) {
-                    return '<div title="2017-08-31 16:34:45">' + value + '</div>';
-                },
             }, {
-                field: 'operate',
-                title: '操作',
+                field: 'ssid',
+                title: 'ssid',
                 align: 'center',
                 valign: 'middle',
-                sortable: false,
-                formatter: function(value, row, index) {
-                    var info = '<a class="delete btn red btn-circle btn-outline" style="margin-right: 10px" href="javascript:void(0)" >' + '<i class="fa  fa-trash-o" style="margin-right: 5px;"></i>' + '删除' + '</a>';
-                    return (info);
-                },
-                events: 'operateEvents'
+                sortable: true,
+                visible: true,
+            }, {
+                field: 'signal',
+                title: '信号强度',
+                align: 'center',
+                valign: 'middle',
+                sortable: true,
+                visible: true,
+            }, {
+                field: 'radio',
+                title: '连接频率',
+                align: 'center',
+                valign: 'middle',
+                sortable: true,
+                visible: true,
+            }, {
+                field: 'devMac',
+                title: '设备MAC',
+                align: 'center',
+                valign: 'middle',
+                sortable: true,
+                visible: true,
             }],
         });
 
         //新增表格数据
         var data = [{
-            name: '五号食堂一楼',
-            devNum: '8',
-            remarks: '备注1',
-            regTime: '2017-08-30',
+            mac: 'ed:54:1r:bb:t1:45',
+            type: 'PC',
+            brand: '苹果4s',
+            ip: '192.168.3.101',
+            netStatus: '2017-08-30 16:23:24',
+            lastUpTime: '16天5小时45分钟',
+            ssid: 'DB123',
+            signal: '-75',
+            radio: '2.4G',
+            devMac: 'ed:54:1r:bb:t1:45',
+            remarks: '老板手机',
         }, {
-            name: '五号食堂一楼',
-            devNum: '12',
-            remarks: '备注2',
-            regTime: '2017-08-30',
+            mac: 'ef:54:1r:bb:t1:23',
+            type: 'phone',
+            brand: '小米6',
+            ip: '192.168.3.102',
+            netStatus: '2017-08-30 16:23:24',
+            lastUpTime: '0天0小时15分钟',
+            ssid: 'DB123',
+            signal: '-75',
+            radio: '2.4G',
+            devMac: 'ed:54:1r:bb:t1:45',
+            remarks: '员工手机',
         }, {
-            name: '3号写字楼18楼楼道口',
-            devNum: '15',
-            remarks: '备注3',
-            regTime: '2017-08-30',
+            mac: '0f:8y:bt:mn:t0:54',
+            type: 'pad',
+            brand: '华为荣耀6',
+            ip: '10.10.11.123',
+            netStatus: '2017-08-30 16:23:24',
+            lastUpTime: '16天5小时45分钟',
+            ssid: 'DB123',
+            signal: '-75',
+            radio: '2.4G',
+            devMac: 'ed:54:1r:bb:t1:45',
+            remarks: '员工手机',
         }];
         for (var i = 0; i < 20; i++) {
             data.push({
-                name: '测试1测试2测试3测试4',
-                devNum: '22',
-                remarks: '备注X',
-                regTime: '2017-08-30',
+                mac: '11:22:33:44:55:6' + i,
+                type: 'phone',
+                brand: '-',
+                ip: '192.168.1.234',
+                netStatus: '2017-08-30 16:23:24',
+                lastUpTime: '16天5小时45分钟',
+                ssid: 'DB123',
+                signal: '-75',
+                radio: '2.4G',
+                devMac: '11:00:22:33:44:55',
+                remarks: '员工手机',
             })
         }
         $('#mytable').bootstrapTable('append', data);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////
+        // 加入黑名单
+        $("#addBlack").click(function(event) {
+            event.preventDefault();
+            var rows = $('#mytable').bootstrapTable('getSelections');
+            if (rows.length == 0) {
+                swal({
+                    title: "加入黑名单失败",
+                    text: "请先选择需要加入黑名单的设备",
+                    type: "error",
+                    showConfirmButton: true,
+                    confirmButtonClass: "btn-danger",
+                    confirmButtonText: "确认",
+                    showCancelButton: false,
+                    closeOnConfirm: true
+                })
+            } else {
+                $("#addBlackDlg").modal();
+            }
+        })
+        $("#addBlackBtn").click(function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            App.blockUI({
+                target: $("#addBlackDlg"),
+                boxed: true,
+                message: '加入到黑名单中...',
+                zIndex: 20000,
+            });
+            window.setTimeout(function() {
+                $("#addBlackDlg").modal('hide');
+                App.unblockUI('#addBlackDlg');
+                App.alert({
+                    place: 'append', // append or prepent in container 
+                    type: 'success', // alert's type
+                    message: '已下发加入黑名单指令', // alert's message
+                    close: true, // make alert closable
+                    reset: true, // close all previouse alerts first
+                    focus: true, // auto scroll to the alert after shown
+                    closeInSeconds: '5', // auto close after defined seconds
+                });
+            }, 3000);
+        })
     })
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-    // 删除
-    window.operateEvents = {
-        'click .delete': function(e, value, row, index) {
-            // alert("删除第" + (index + 1) + "行");
-            $("#delDlg").modal();
-        }
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-    // 备注修改
-    window.devNameEvents = {
-        'click .editName': function(e, value, row, index) {
-            e.preventDefault();
-            $("#devNameInput").val(value);
-            $("#devName").modal();
-        }
-    }
-
-
     ////////////////////////////////////////////////////////////////////////////////////////////////
     // 
     function getLength(str) {
