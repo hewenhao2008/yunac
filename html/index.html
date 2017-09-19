@@ -119,6 +119,12 @@
                                     <span class="title">认证服务器管理</span>
                                 </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="group.html" class="nav-link ">
+                                    <i class="iconfont icon-fenzu" style="font-size: 20px;"></i>
+                                    <span class="title">分组管理</span>
+                                </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -203,7 +209,7 @@
                         <div class="col-md-12">
                             <div class="tabbable-line boxless tabbable-reversed">
                                 <ul class="nav nav-tabs" id="mytab">
-                                    <li><a href="#tab1" data-toggle="tab">AP列表</a></li>
+                                    <li class="active"><a href="#tab1" data-toggle="tab">AP列表</a></li>
                                     <li><a href="#tab2" data-toggle="tab">配置文件</a></li>
                                 </ul>
                                 <div class="tab-content">
@@ -341,7 +347,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="portlet-body">
-                                                        <div class="btn-group" id="toolbar">
+                                                        <div class="btn-group" id="toolbar2">
                                                             <a class="btn btn-circle blue" href="javascript:;" data-toggle="dropdown" aria-expanded="false" id="addSetting">
                                             <i class="fa fa-plus"></i> 新增配置文件
                                         </a>
@@ -551,6 +557,25 @@
                     <button type="button" class="btn red btn-outline" data-dismiss="modal">取消
                     </button>
                     <button type="button" class="btn green" data-dismiss="modal" id="updateOk">升级固件
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade in" id="delDlg" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">删除配置文件</h4>
+                </div>
+                <div class="modal-body">
+                    确认要删除配置文件吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn red btn-outline" data-dismiss="modal">取消
+                    </button>
+                    <button type="button" id="saveSetting" class="btn green" data-dismiss="modal" id="setDevParamOk">确认删除
                     </button>
                 </div>
             </div>
@@ -1110,6 +1135,98 @@
             $("#versionSearch").val("");
             $('#mytable').bootstrapTable('filterBy', { netStatus: 'Off' });
         })
+
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        // 配置文件表格
+        $('#mytable2').bootstrapTable({
+            search: true, // 显示搜索框
+            pagination: true, // 底部显示数量,
+            pageNumber: 1, //初始化加载第一页，默认第一页
+            pageSize: 5, //每页的记录行数
+            pageList: [5, 10, 25, 50, 100], //可供选择的每页的行数
+            striped: true,
+            toolbar: '#toolbar2',
+            columns: [{ // 表头
+                field: 'setName', // 域名
+                title: '配置文件名称', //文字名称
+                align: 'center', // 水平居中
+                valign: 'middle', // 垂直居中
+                sortable: true, //启用排序
+                visible: true,
+            }, {
+                field: 'remarks',
+                title: '备注',
+                align: 'center',
+                valign: 'middle',
+                sortable: true,
+                visible: true,
+                formatter: function(value, row, index) {
+                    // 限定12个字符以内
+                    var result = "";
+                    if (getLength(value) > 12) {
+                        result = '<div title=' + value + '>' + '<a class="editName">' + cutstr(value, 12) + '</a></div>';
+                    } else {
+                        result = '<a class="editName">' + value + '</a>';
+                    }
+                    return result;
+                },
+                events: 'devNameEvents',
+            }, {
+                field: 'regTime',
+                title: '创建时间',
+                align: 'center',
+                valign: 'middle',
+                sortable: true,
+                visible: true,
+                formatter: function(value, row, index) {
+                    return '<div title="2017-08-31 16:34:45">' + value + '</div>';
+                },
+            }, {
+                field: 'updateTime',
+                title: '末次修改时间',
+                align: 'center',
+                valign: 'middle',
+                sortable: true,
+                visible: true,
+                formatter: function(value, row, index) {
+                    return '<div title="2017-08-31 16:34:45">' + value + '</div>';
+                },
+            }, {
+                field: 'operate',
+                title: '操作',
+                align: 'center',
+                valign: 'middle',
+                sortable: false,
+                formatter: function(value, row, index) {
+                    var edit = '<a class="edit btn blue btn-circle btn-outline" style="margin-right: 10px" href="javascript:void(0)" >' + '<i class="fa  fa-pencil"></i>' + '修改' + '</a>';
+                    var del = '<a class="delete btn red btn-circle btn-outline" href="javascript:void(0)" >' + '<i class="fa  fa-trash-o"></i>' + '删除' + '</a>';
+                    return (edit + del);
+                },
+                events: 'operateEvents'
+            }],
+        });
+        //新增表格数据
+        var data2 = [{
+            setName: 'SSID修改',
+            remarks: '五号食堂一楼',
+            regTime: '2017-08-30',
+            updateTime: '2017-08-30'
+        }, {
+            setName: 'SSID隐藏',
+            remarks: '五号食堂一楼',
+            regTime: '2017-08-30',
+            updateTime: '2017-09-04'
+        }, {
+            setName: '5.8G配置',
+            remarks: '3号写字楼18楼楼道口',
+            regTime: '2017-08-30',
+            updateTime: '2017-09-04'
+        }];
+        $('#mytable2').bootstrapTable('append', data2);
+        $("#addSetting").click(function(event) {
+            event.preventDefault();
+            window.location.href = "./peizhi.html";
+        })
     })
     ////////////////////////////////////////////////////////////////////////////////////////////////
     // 设备定位点击
@@ -1160,6 +1277,16 @@
                 window.location.href = "./setting.html";
             }, 3000);
 
+        },
+        'click .edit': function(e, value, row, index) {
+            e.preventDefault();
+            window.location.href = "./peizhi.html";
+        },
+        'click .delete': function(e, value, row, index) {
+            // alert("删除第" + (index + 1) + "行");
+            var ssids = [];
+            ssids.push(row.ssid);
+            $("#delDlg").modal();
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////

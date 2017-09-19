@@ -107,17 +107,17 @@
                                     <span class="title">AP管理</span>
                                 </a>
                                 </li>
-                                <li class="nav-item open">
+                                <li class="nav-item">
                                     <a href="tanzhen.html" class="nav-link ">
                                     <i class="iconfont icon-tanzhen" style="font-size: 20px;"></i>
                                     <span class="title">探针管理</span>
-                                    <span class="selected"></span>
                                 </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item open">
                                     <a href="authServer.html" class="nav-link ">
                                     <i class="iconfont icon-fuwuqi" style="font-size: 20px;"></i>
                                     <span class="title">认证服务器管理</span>
+                                    <span class="selected"></span>
                                 </a>
                                 </li>
                                 <li class="nav-item">
@@ -192,7 +192,7 @@
                         <ul class="page-breadcrumb">
                             <li>
                                 <!--<a href="javascript:;">管理首页</a>-->
-                                <span>探针管理</span>
+                                <span>认证服务器管理</span>
                             </li>
                             <li>
                                 <span></span>
@@ -201,7 +201,7 @@
                     </div>
                     <!-- END PAGE BAR -->
                     <!-- BEGIN PAGE TITLE-->
-                    <h1 class="page-title">探针管理
+                    <h1 class="page-title">认证服务器管理
                         <small>概况</small>
                     </h1>
                     <!-- END PAGE TITLE-->
@@ -216,7 +216,7 @@
                                     <div class="number">
                                         <span data-counter="counterup" data-value="200">200</span>
                                     </div>
-                                    <div class="desc">探针总数</div>
+                                    <div class="desc">认证服务器总数</div>
                                 </div>
                             </a>
                         </div>
@@ -229,7 +229,7 @@
                                     <div class="number">
                                         <span data-counter="counterup" data-value="150">150</span>
                                     </div>
-                                    <div class="desc">在线探针数</div>
+                                    <div class="desc">在线认证服务器数</div>
                                 </div>
                             </a>
                         </div>
@@ -242,7 +242,7 @@
                                     <div class="number">
                                         <span data-counter="counterup" data-value="50">50</span>
                                     </div>
-                                    <div class="desc">离线探针数</div>
+                                    <div class="desc">离线认证服务器数</div>
                                 </div>
                             </a>
                         </div>
@@ -258,11 +258,11 @@
                                 <div class="portlet-title">
                                     <div class="caption">
                                         <i class="iconfont icon-liebiao" style="font-size: 17px;color:rgb(53,152,220);"></i>
-                                        <span class="caption-subject font-blue sbold uppercase">探针列表</span>
+                                        <span class="caption-subject font-blue sbold uppercase">认证服务器列表</span>
                                     </div>
                                 </div>
                                 <div class="portlet-body">
-                                    <div class="btn-group" id="toolbar">
+                                    <div class="btn-group" id="toolbar" style="display: none">
                                         <a class="btn btn-circle blue" href="javascript:;" data-toggle="dropdown" aria-expanded="false" id="addSetting">
                                             <i class="iconfont icon-gongneng"></i> 设备管理
                                             <i class="fa fa-angle-down"></i>
@@ -571,7 +571,8 @@
         // var abc = Cookies.get('mode');
         // 初始化表格
         $('#mytable').bootstrapTable({
-            // search: true, // 显示搜索框
+            search: true, // 显示搜索框
+            searchAlign: 'left', // 搜索框位置
             // sortName: 'mac', // 初始化排序字段
             // url: 'https://weiquaninfo.cn/json/data.json',   
             pagination: true, // 底部显示数量,
@@ -579,21 +580,16 @@
             pageSize: 5, //每页的记录行数
             pageList: [5, 10, 25, 50, 100], //可供选择的每页的行数
             striped: true,
-            toolbar: '#toolbar',
-            showExport: true, // 导出（第三方）
-            exportDataType: 'all', // 导出参数
-            exportTypes: ['excel'], // 导出文件类型
-            exportOptions: { // 导出选项
-                excelFileFormat: 'xlsx'
-            },
+            // toolbar: '#toolbar',
+            // showExport: true, // 导出（第三方）
+            // exportDataType: 'all', // 导出参数
+            // exportTypes: ['excel'], // 导出文件类型
+            // exportOptions: { // 导出选项
+            //     excelFileFormat: 'xlsx'
+            // },
             showColumns: true, // 显示列选择按钮
             // clickToSelect: true,
-            columns: [{
-                field: 'state', // 必须要有，否则获取行会多出一个数据
-                align: 'center',
-                valign: 'middle',
-                checkbox: true,
-            }, { // 表头
+            columns: [{ // 表头
                 field: 'mac', // 域名
                 title: '设备MAC', //文字名称
                 align: 'center', // 水平居中

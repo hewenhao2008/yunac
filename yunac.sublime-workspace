@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"ac",
+				"active"
+			],
+			[
 				"font",
 				"font-size"
 			],
@@ -107,25 +111,25 @@
 			"file": "html/index.html",
 			"settings":
 			{
-				"buffer_size": 54759,
+				"buffer_size": 60514,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "html/wifisetting.html",
-			"settings":
-			{
-				"buffer_size": 34023,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "html/setting.html",
 			"settings":
 			{
-				"buffer_size": 26426,
+				"buffer_size": 33759,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "html/peizhi.html",
+			"settings":
+			{
+				"buffer_size": 23632,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -236,13 +240,21 @@
 	"expanded_folders":
 	[
 		"/D/Project/web/yunac",
+		"/D/Project/web/yunac/assets/global",
+		"/D/Project/web/yunac/assets/global/plugins",
+		"/D/Project/web/yunac/assets/global/plugins/iconfont",
 		"/D/Project/web/yunac/html"
 	],
 	"file_history":
 	[
-		"/D/Project/web/yunac/html/wifisetting.html",
+		"/D/Project/web/yunac/assets/global/plugins/iconfont/iconfont.css",
+		"/D/Project/web/yunac/html/authServer.html",
+		"/D/Project/web/yunac/html/tanzhen.html",
+		"/D/Project/web/yunac/html/version.html",
+		"/D/Project/web/yunac/html/peizhi.html",
 		"/D/Project/web/yunac/html/index.html",
 		"/D/Project/web/yunac/html/setting.html",
+		"/D/Project/web/yunac/html/wifisetting.html",
 		"/D/Project/web/yunac/html/group.html",
 		"/D/Project/web/yunac/html/group.js",
 		"/D/Project/web/yunac/assets/global/plugins/ie8.fix.min.js",
@@ -362,22 +374,18 @@
 		"/D/React/reactJs/src/index.html",
 		"/D/React/reactJs/src/npm-debug.log",
 		"/D/React/reactJs/.eslintrc.js",
-		"/D/React/reactJs/src/index.js",
-		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
-		"/D/React/reactJs/src/components/BasicExample.js",
-		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/User/Emmet.sublime-settings",
-		"/D/360云盘/资料文档/01_多倍通工作资料/99_微信小程序_公众号学习_APP_react学习/weui学习.txt",
-		"/C/Users/zjj/AppData/Roaming/Sublime Text 3/Packages/User/HTMLPrettify.sublime-settings"
+		"/D/React/reactJs/src/index.js"
 	],
 	"find":
 	{
-		"height": 43.0
+		"height": 44.0
 	},
 	"find_in_files":
 	{
 		"height": 105.0,
 		"where_history":
 		[
+			"D:\\Project\\web\\yunac",
 			"D:\\Project\\react\\reactNative\\myapp"
 		]
 	},
@@ -386,6 +394,27 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"a:first",
+			"mytab",
+			"mytable",
+			"updateDlg",
+			"updateBtn",
+			"固件",
+			"固件版本",
+			"rebootDlg",
+			"rebootBtn",
+			"设备管理",
+			"group",
+			"userName",
+			"userNameDlg",
+			"userName",
+			"userNameDlg",
+			"userName",
+			"mytable",
+			"devTotals",
+			"下载",
+			"devNameEvents",
+			"tabContentPage",
 			"iconfont",
 			"fa fa-gift",
 			"portlet-body form",
@@ -435,6 +464,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"mytable2",
 			"assets",
 			"取消"
 		],
@@ -447,7 +477,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -456,15 +486,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 54759,
+						"buffer_size": 60514,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6450,
-								6510
+								12502,
+								12502
 							]
 						],
 						"settings":
@@ -475,38 +505,37 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2815.0,
+						"translation.y": 3720.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "html/wifisetting.html",
+					"file": "html/setting.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 34023,
+						"buffer_size": 33759,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8414,
-								8414
+								17569,
+								17569
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4111.0,
+						"translation.y": 8900.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -514,19 +543,19 @@
 				},
 				{
 					"buffer": 2,
-					"file": "html/setting.html",
+					"file": "html/peizhi.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 26426,
+						"buffer_size": 23632,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								25189,
-								25189
+								11764,
+								13415
 							]
 						],
 						"settings":
@@ -537,10 +566,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 14011.0,
+						"translation.y": 6248.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -548,7 +577,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 36.0
 	},
 	"input":
 	{
@@ -585,7 +614,7 @@
 	"project": "yunac.sublime-project",
 	"replace":
 	{
-		"height": 72.0
+		"height": 82.0
 	},
 	"save_all_on_build": true,
 	"select_file":
