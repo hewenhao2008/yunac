@@ -263,7 +263,7 @@
                                     </div>
                                 </div>
                                 <div class="portlet-body">
-                                    <form class="form-inline" role="form">
+                                    <form class="form-inline" role="form" style="margin-bottom: 15px;">
                                         <div class="form-group">
                                             <label class="sr-only" for="devMacSearch">mac</label>
                                             <input type="text" class="form-control" id="devMacSearch" placeholder="终端MAC">
@@ -283,7 +283,7 @@
                                             <i class="fa fa-refresh" style="margin-right: 5px;"></i>复位 
                                         </a>
                                     </form>
-                                    <div class="btn-group" id="toolbar">
+                                    <div class="btn-group" id="toolbar" style="display: none">
                                         <a class="btn btn-circle blue" href="javascript:;" data-toggle="dropdown" aria-expanded="false">
                                                                 <i class="iconfont icon-gongneng"></i> 用户管理
                                                                 <i class="fa fa-angle-down"></i>
@@ -351,70 +351,67 @@
             pageSize: 5, //每页的记录行数
             pageList: [5, 10, 25, 50, 100], //可供选择的每页的行数
             striped: true,
-            toolbar: '#toolbar',
-            showExport: true, // 导出（第三方）
-            exportDataType: 'all', // 导出参数
-            exportTypes: ['excel'], // 导出文件类型
-            exportOptions: { // 导出选项
-                excelFileFormat: 'xlsx'
-            },
-            showColumns: true, // 显示列选择按钮
+            // toolbar: '#toolbar',
+            // showExport: true, // 导出（第三方） // exportDataType: 'all', // 导出参数 // exportTypes: ['excel'], // 导出文件类型 // exportOptions: { // 导出选项 // excelFileFormat: 'xlsx' // }, // showColumns: true, // 显示列选择按钮
             // clickToSelect: true,
-            columns: [{
-                field: 'state', // 必须要有，否则获取行会多出一个数据
-                align: 'center',
-                valign: 'middle',
-                checkbox: true,
-            }, { // 表头
-                field: 'mac', // 域名
-                title: '终端MAC', //文字名称
-                align: 'center', // 水平居中
-                valign: 'middle', // 垂直居中
-                sortable: true, //启用排序
-                visible: true,
-            }, {
-                field: 'type',
-                title: '终端类型',
-                align: 'center',
-                valign: 'middle',
-                sortable: true,
-                visible: false,
-            }, {
-                field: 'brand',
-                title: '终端品牌/型号',
-                align: 'center',
-                valign: 'middle',
-                sortable: true,
-                visible: true,
-            }, {
-                field: 'remarks',
-                title: '终端备注',
-                align: 'center',
-                valign: 'middle',
-                sortable: true,
-                visible: false,
-            }, {
-                field: 'signal',
-                title: '信号强度',
-                align: 'center',
-                valign: 'middle',
-                sortable: true,
-                visible: true,
-            }, {
-                field: 'devMac',
-                title: '设备MAC',
-                align: 'center',
-                valign: 'middle',
-                sortable: true,
-                visible: true,
-            }, {
-                field: 'netStatus',
-                title: '探测时间',
-                align: 'center',
-                valign: 'middle',
-                sortable: true,
-                visible: true,
-            }],
+            columns: [
+                // {
+                //     field: 'state', // 必须要有，否则获取行会多出一个数据
+                //     align: 'center',
+                //     valign: 'middle',
+                //     checkbox: true,
+                // }, 
+                { // 表头
+                    field: 'mac', // 域名
+                    title: '终端MAC', //文字名称
+                    align: 'center', // 水平居中
+                    valign: 'middle', // 垂直居中
+                    sortable: true, //启用排序
+                    visible: true,
+                }, {
+                    field: 'type',
+                    title: '终端类型',
+                    align: 'center',
+                    valign: 'middle',
+                    sortable: true,
+                    visible: false,
+                }, {
+                    field: 'brand',
+                    title: '终端品牌/型号',
+                    align: 'center',
+                    valign: 'middle',
+                    sortable: true,
+                    visible: true,
+                }, {
+                    field: 'remarks',
+                    title: '终端备注',
+                    align: 'center',
+                    valign: 'middle',
+                    sortable: true,
+                    visible: false,
+                }, {
+                    field: 'signal',
+                    title: '信号强度',
+                    align: 'center',
+                    valign: 'middle',
+                    sortable: true,
+                    visible: true,
+                }, {
+                    field: 'devMac',
+                    title: '设备MAC',
+                    align: 'center',
+                    valign: 'middle',
+                    sortable: true,
+                    visible: true,
+                }, {
+                    field: 'netStatus',
+                    title: '探测时间',
+                    align: 'center',
+                    valign: 'middle',
+                    sortable: true,
+                    visible: true,
+                }
+            ],
         });
 
         //新增表格数据

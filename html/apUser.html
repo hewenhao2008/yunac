@@ -234,104 +234,87 @@
                     <!-- END PAGE TITLE-->
                     <!-- BEGIN DASHBOARD STATS 1-->
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="tabbable-line boxless tabbable-reversed">
-                                <ul class="nav nav-tabs" id="mytab">
-                                    <li class="active"><a href="#tab1" data-toggle="tab">AP在线用户</a></li>
-                                    <li><a href="#tab2" data-toggle="tab">黑名单管理</a></li>
-                                </ul>
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="tab1">
-                                        <div class="row">
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                                <a class="dashboard-stat dashboard-stat-v2 green" href="#" id="devTotals">
-                                                    <div class="visual">
-                                                        <i class="fa fa-comments"></i>
-                                                    </div>
-                                                    <div class="details">
-                                                        <div class="number">
-                                                            <span data-counter="counterup" data-value="200">200</span>
-                                                        </div>
-                                                        <div class="desc">AP在线用户总数</div>
-                                                    </div>
-                                                </a>
-                                            </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <a class="dashboard-stat dashboard-stat-v2 green" href="#" id="devTotals">
+                                <div class="visual">
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number">
+                                        <span data-counter="counterup" data-value="200">200</span>
+                                    </div>
+                                    <div class="desc">AP在线用户总数</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- END DASHBOARD STATS 1-->
+                    <!-- BEGIN TABLE STATIC BASIC-->
+                    <!-- END TABLE STATIC BASIC-->
+                    <div class="row" id="connectDev">
+                        <div class="col-md-12 col-sm-12">
+                            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                            <div class="portlet light portlet-fit portlet-datatable bordered">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="iconfont icon-liebiao" style="font-size: 17px;color:rgb(53,152,220);"></i>
+                                        <span class="caption-subject font-blue sbold uppercase">用户列表</span>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <form class="form-inline" role="form" style="margin-bottom: 15px;">
+                                        <div class="form-group">
+                                            <label class="sr-only" for="devMacSearch">mac</label>
+                                            <input type="text" class="form-control" id="devMacSearch" placeholder="终端MAC">
                                         </div>
-                                        <div class="clearfix"></div>
-                                        <!-- END DASHBOARD STATS 1-->
-                                        <!-- BEGIN TABLE STATIC BASIC-->
-                                        <!-- END TABLE STATIC BASIC-->
-                                        <div class="row" id="connectDev">
-                                            <div class="col-md-12 col-sm-12">
-                                                <!-- BEGIN EXAMPLE TABLE PORTLET-->
-                                                <div class="portlet light portlet-fit portlet-datatable bordered">
-                                                    <div class="portlet-title">
-                                                        <div class="caption">
-                                                            <i class="iconfont icon-liebiao" style="font-size: 17px;color:rgb(53,152,220);"></i>
-                                                            <span class="caption-subject font-blue sbold uppercase">用户列表</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="portlet-body">
-                                                        <form class="form-inline" role="form">
-                                                            <div class="form-group">
-                                                                <label class="sr-only" for="devMacSearch">mac</label>
-                                                                <input type="text" class="form-control" id="devMacSearch" placeholder="终端MAC">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="sr-only" for="devNameSearch">devNameSearch</label>
-                                                                <input type="text" class="form-control" id="devNameSearch" placeholder="终端类型">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="sr-only" for="userNameSearch">userName</label>
-                                                                <input type="text" class="form-control" id="userNameSearch" placeholder="终端品牌/型号">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="sr-only" for="devGroupSearch">devGroup</label>
-                                                                <input type="text" class="form-control" id="devGroupSearch" placeholder="终端IP">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="sr-only" for="ipaddressSearch">ipaddress</label>
-                                                                <input type="text" class="form-control" id="ipaddressSearch" placeholder="SSID名称">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="sr-only" for="ssidNameSearch">ssidName</label>
-                                                                <input type="text" class="form-control" id="ssidNameSearch" placeholder="连接频率">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="sr-only" for="versionSearch">version</label>
-                                                                <input type="text" class="form-control" id="versionSearch" placeholder="设备MAC">
-                                                            </div>
-                                                            <a href="javascript:;" class="btn btn-circle green" id="searchBegin">
+                                        <div class="form-group">
+                                            <label class="sr-only" for="devNameSearch">devNameSearch</label>
+                                            <input type="text" class="form-control" id="devNameSearch" placeholder="终端类型">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="userNameSearch">userName</label>
+                                            <input type="text" class="form-control" id="userNameSearch" placeholder="终端品牌/型号">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="devGroupSearch">devGroup</label>
+                                            <input type="text" class="form-control" id="devGroupSearch" placeholder="终端IP">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="ipaddressSearch">ipaddress</label>
+                                            <input type="text" class="form-control" id="ipaddressSearch" placeholder="SSID名称">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="ssidNameSearch">ssidName</label>
+                                            <input type="text" class="form-control" id="ssidNameSearch" placeholder="连接频率">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="versionSearch">version</label>
+                                            <input type="text" class="form-control" id="versionSearch" placeholder="设备MAC">
+                                        </div>
+                                        <a href="javascript:;" class="btn btn-circle green" id="searchBegin">
                                             <i class="fa fa-search" style="margin-right: 5px;"></i>查询 
                                         </a>
-                                                            <a href="javascript:;" class="btn btn-circle red" id="searchReset">
+                                        <a href="javascript:;" class="btn btn-circle red" id="searchReset">
                                             <i class="fa fa-refresh" style="margin-right: 5px;"></i>复位 
                                         </a>
-                                                        </form>
-                                                        <div class="btn-group" id="toolbar">
-                                                            <a class="btn btn-circle blue" href="javascript:;" data-toggle="dropdown" aria-expanded="false">
+                                    </form>
+                                    <div class="btn-group" id="toolbar" style="display: none">
+                                        <a class="btn btn-circle blue" href="javascript:;" data-toggle="dropdown" aria-expanded="false">
                                                                 <i class="iconfont icon-gongneng"></i> 用户管理
                                                                 <i class="fa fa-angle-down"></i>
                                                             </a>
-                                                            <ul class="dropdown-menu">
-                                                                <li>
-                                                                    <a href="javascript:;" id="addBlack">
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="javascript:;" id="addBlack">
                                                 <i class="iconfont icon-xiafapeizhi2" style="font-size: 14px"></i> 加入黑名单 </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <table id="mytable"></table>
-                                                    </div>
-                                                </div>
-                                                <!-- END EXAMPLE TABLE PORTLET-->
-                                            </div>
-                                        </div>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <div class="tab-pane" id="tab2">
-                                        12345
-                                    </div>
+                                    <table id="mytable"></table>
                                 </div>
                             </div>
+                            <!-- END EXAMPLE TABLE PORTLET-->
                         </div>
                     </div>
                 </div>
@@ -403,21 +386,12 @@
             pageSize: 5, //每页的记录行数
             pageList: [5, 10, 25, 50, 100], //可供选择的每页的行数
             striped: true,
-            toolbar: '#toolbar',
-            showExport: true, // 导出（第三方）
-            exportDataType: 'all', // 导出参数
-            exportTypes: ['excel'], // 导出文件类型
-            exportOptions: { // 导出选项
-                excelFileFormat: 'xlsx'
-            },
-            showColumns: true, // 显示列选择按钮
+            // toolbar: '#toolbar',
+            // showExport: true, // 导出（第三方） // exportDataType: 'all', // 导出参数 // exportTypes: ['excel'], // 导出文件类型 // exportOptions: { // 导出选项 // excelFileFormat: 'xlsx' // }, // showColumns: true, // 显示列选择按钮
             // clickToSelect: true,
-            columns: [{
-                field: 'state', // 必须要有，否则获取行会多出一个数据
-                align: 'center',
-                valign: 'middle',
-                checkbox: true,
-            }, { // 表头
+            columns: [
+            // { // field: 'state', // 必须要有，否则获取行会多出一个数据 // align: 'center', // valign: 'middle', // checkbox: true, // },
+            { // 表头
                 field: 'mac', // 域名
                 title: '终端MAC', //文字名称
                 align: 'center', // 水平居中
