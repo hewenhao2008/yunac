@@ -672,11 +672,12 @@
                     align: 'center',
                     valign: 'middle',
                     sortable: false,
-                    width: '250px',
+                    width: '350px',
                     formatter: function(value, row, index) {
                         var info = '<a class="setting btn red btn-circle btn-outline" style="margin-right: 5px" href="javascript:void(0)" >' + '<i class="fa fa-trash-o" style="margin-right: 5px;"></i>' + '删除' + '</a>';
                         var power = '<a class="power btn blue btn-circle btn-outline" style="margin-right: 15px" href="javascript:void(0)" >' + '<i class="fa fa-trash-o" style="margin-right: 5px;"></i>' + '权限' + '</a>';
-                        return (power + info);
+                        var goSys = '<a class="gosystem btn green btn-circle btn-outline" style="margin-right: 15px" href="javascript:void(0)" >' + '<i class="fa fa-trash-o" style="margin-right: 5px;"></i>' + '后台' + '</a>';
+                        return (power + goSys + info);
                     },
                     events: 'operateEvents'
                 }
@@ -811,6 +812,10 @@
         'click .power': function(e, value, row, index) {
             e.preventDefault();
             $("#powerDlg").modal();
+        },
+        'click .gosystem': function(e, value, row, index) {
+            e.preventDefault();
+            alert("进入到代理商端后台");
         },
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
