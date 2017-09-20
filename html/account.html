@@ -23,6 +23,7 @@
     <link href="../assets/global/plugins/bootstrap-sweetalert/sweetalert.css" type="text/css" rel="stylesheet">
     <link href="../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet" type="text/css" />
     <link href="../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" type="text/css" />
 </head>
 <!-- END HEAD -->
 
@@ -372,25 +373,6 @@
             </div>
         </div>
     </div>
-    <div class="modal fade in" id="downloadDlg" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title">下载固件</h4>
-                </div>
-                <div class="modal-body">
-                    确认要下载此固件吗？
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn red btn-outline" data-dismiss="modal">取消
-                    </button>
-                    <button type="button" id="saveSetting" class="btn green" data-dismiss="modal" id="setDevParamOk">确认下载
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="modal fade in" id="uploadFile" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -431,12 +413,12 @@
             </div>
         </div>
     </div>
-    <div class="modal fade in" id="userNameDlg" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+    <div class="modal fade in" id="powerDlg" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title">代理商/客户</h4>
+                    <h4 class="modal-title">权限管理</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -444,20 +426,7 @@
                             <form class="form-horizontal form-row-seperated">
                                 <div class="form-body">
                                     <div class="form-group">
-                                        <label class="control-label col-md-3">代理商</label>
-                                        <select class="selectpicker col-md-6">
-                                            <option>安徽</option>
-                                            <option>西安</option>
-                                            <option>福建</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3">客户</label>
-                                        <select class="selectpicker col-md-6">
-                                            <option>黄山</option>
-                                            <option>大学</option>
-                                            <option>欢乐谷</option>
-                                        </select>
+                                        <div id="powerTree"> </div>
                                     </div>
                                 </div>
                             </form>
@@ -467,94 +436,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn red btn-outline" data-dismiss="modal">取消
                     </button>
-                    <button type="button" class="btn green" data-dismiss="modal">保存
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade in" id="group" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title">设备分组</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <form class="form-horizontal form-row-seperated">
-                                <div class="form-body">
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3">分组</label>
-                                        <select class="selectpicker col-md-6">
-                                            <option>分组1</option>
-                                            <option>分组2</option>
-                                            <option>分组3</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn red btn-outline" data-dismiss="modal">取消
-                    </button>
-                    <button type="button" class="btn green" data-dismiss="modal">保存
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade in" id="rebootDlg" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title">远程重启</h4>
-                </div>
-                <div class="modal-body">
-                    确认要远程重启已选中的设备吗？
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn red btn-outline" data-dismiss="modal">取消
-                    </button>
-                    <button type="button" id="rebootDev" class="btn green" data-dismiss="modal" id="setDevParamOk">立即重启
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade in" id="updateDlg" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title">固件升级</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <form class="form-horizontal form-row-seperated">
-                                <div class="form-body">
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3">选择升级固件</label>
-                                        <select class="selectpicker col-md-6">
-                                            <option>固件1</option>
-                                            <option>固件2</option>
-                                            <option>固件3</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn red btn-outline" data-dismiss="modal">取消
-                    </button>
-                    <button type="button" class="btn green" data-dismiss="modal" id="updateOk">升级固件
+                    <button type="button" class="btn green" data-dismiss="modal" id="updateOk">立即保存
                     </button>
                 </div>
             </div>
@@ -577,6 +459,7 @@
     <script src="../assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
     <script src="../assets/global/plugins/bootstrap-sweetalert/sweetalert.min.js" type="text/javascript"></script>
     <script src="../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/jstree/dist/jstree.min.js" type="text/javascript"></script>
     <script src="../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
     <script src="../assets/global/plugins/bootstrap-table-master/bootstrap-table.min.js"></script>
     <script src="../assets/global/plugins/bootstrap-table-master/locale/bootstrap-table-zh-CN.min.js"></script>
@@ -586,6 +469,83 @@
     <script src="../assets/global/plugins/bootstrap-table-master/bootstrap-table-export.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
+        ///////////////////////////////////////////////////////////////////////////////////////////
+        // 权限树
+        $('#powerTree').jstree({
+            'plugins': ["checkbox", "types"],
+            'core': {
+                "themes": {
+                    "responsive": false
+                },
+                'data': [{
+                    "text": "设备管理",
+                    "state": {
+                        "opened": true,
+                    },
+                    "children": [{
+                        "text": "AP管理",
+                        "state": {
+                            "selected": true
+                        }
+                    }, {
+                        "text": "探针管理",
+                        "state": {
+                            "selected": true
+                        }
+                    }, {
+                        "text": "认证服务器管理",
+                        "state": {
+                            "selected": true
+                        },
+                    }, {
+                        "text": "分组管理",
+                        "state": {
+                            "selected": true
+                        },
+                    }, ]
+                }, {
+                    "text": "用户管理",
+                    "state": {
+                        "opened": true,
+                    },
+                    "children": [{
+                        "text": "AP用户",
+                        "state": {
+                            "selected": true
+                        }
+                    }, {
+                        "text": "探针用户",
+                        "state": {
+                            "selected": true
+                        }
+                    }],
+                }, {
+                    "text": "系统管理",
+                    "state": {
+                        "opened": true,
+                    },
+                    "children": [{
+                        "text": "日志管理",
+                        "state": {
+                            "selected": true
+                        }
+                    }, {
+                        "text": "代理商管理",
+                        "state": {
+                            "selected": true
+                        }
+                    }]
+                }]
+            },
+            "types": {
+                "default": {
+                    "icon": "fa fa-folder icon-state-warning icon-lg"
+                },
+                "file": {
+                    "icon": "fa fa-file icon-state-warning icon-lg"
+                }
+            }
+        });
         ///////////////////////////////////////////////////////////////////////////////////////////
         // 初始化日期选择控件
         $('#dateTimeSel').daterangepicker({
@@ -842,29 +802,15 @@
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    // 代理商修改
-    window.userEvents = {
-        'click .editUser': function(e, value, row, index) {
-            e.preventDefault();
-            $("#userNameDlg").modal();
-        }
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-    // 分组修改
-    window.groupEvents = {
-        'click .editGroup': function(e, value, row, index) {
-            e.preventDefault();
-            $("#group").modal();
-        }
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////
     // 固件操作
     window.operateEvents = {
         'click .setting': function(e, value, row, index) {
             e.preventDefault();
             $("#delDlg").modal();
+        },
+        'click .power': function(e, value, row, index) {
+            e.preventDefault();
+            $("#powerDlg").modal();
         },
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
