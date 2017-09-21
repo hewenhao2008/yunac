@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"power",
+				"powerDlg"
+			],
+			[
+				"acc",
+				"account.html"
+			],
+			[
+				"marin-",
+				"margin-bottom"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
 				"tan",
 				"tanzhenUser.html"
 			],
@@ -30,10 +50,6 @@
 			[
 				"js",
 				"js.cookie-2.1.4.min.js"
-			],
-			[
-				"margin",
-				"margin-top"
 			],
 			[
 				"s",
@@ -120,21 +136,21 @@
 	"buffers":
 	[
 		{
-			"file": "html/apUser.html",
+			"file": "html/account.html",
 			"settings":
 			{
-				"buffer_size": 31706,
+				"buffer_size": 42837,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "html/index.html",
+			"file": "html/gps.html",
 			"settings":
 			{
-				"buffer_size": 67364,
+				"buffer_size": 13074,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -243,19 +259,23 @@
 	"expanded_folders":
 	[
 		"/D/Project/web/yunac",
-		"/D/Project/web/yunac/html",
-		"/D/Project/web/yunac/node_modules"
+		"/D/Project/web/yunac/html"
 	],
 	"file_history":
 	[
-		"/D/Project/web/yunac/html/tanzhenUser.html",
+		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/pages/scripts/ui-tree.js",
+		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/admin_1/ui_tree.html",
+		"/C/Users/zjj/Desktop/dateLog-2017-09-20.log",
+		"/D/Project/web/yunac/html/client.html",
 		"/D/Project/web/yunac/html/index.html",
-		"/D/Project/web/yunac/html/apUser.html",
 		"/D/Project/web/yunac/html/version.html",
+		"/D/Project/web/yunac/html/tanzhen.html",
 		"/D/Project/web/yunac/html/authServer.html",
 		"/D/Project/web/yunac/html/group.html",
+		"/D/Project/web/yunac/html/apUser.html",
+		"/D/Project/web/yunac/html/tanzhenUser.html",
 		"/D/Project/web/yunac/html/log.html",
-		"/D/Project/web/yunac/html/tanzhen.html",
+		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/admin_1/index.html",
 		"/D/Project/web/bootstrap-daterangepicker/demo.html",
 		"/D/Project/web/bootstrap-daterangepicker/daterangepicker.js",
 		"/D/Project/web/yunac/html/test.html",
@@ -275,7 +295,6 @@
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.js",
 		"/D/Project/web/yunac/html/gps.html",
 		"/D/Project/web/myapp/views/index.ejs",
-		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/admin_1/index.html",
 		"/D/Project/web/frameMini2/html_mini/index - 副本.html",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/admin_1/index - 副本.html",
 		"/D/Project/web/frameMini2/html_mini/index.html",
@@ -371,15 +390,11 @@
 		"/D/React/reactJs/public/components/Topics.js",
 		"/D/React/reactJs/src/App.js",
 		"/D/React/reactJs/public/App.js",
-		"/D/React/reactJs/public/index.html",
-		"/D/React/reactJs/src/App2.js",
-		"/C/Users/zjj/Desktop/oui.txt",
-		"/D/React/reactJs/public/components/Home.js",
-		"/D/React/reactJs/server.js"
+		"/D/React/reactJs/public/index.html"
 	],
 	"find":
 	{
-		"height": 44.0
+		"height": 45.0
 	},
 	"find_in_files":
 	{
@@ -395,6 +410,33 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"iconfont",
+			"powerDlg",
+			"setting",
+			"operateEvents",
+			"updateDlg",
+			"uploadOK",
+			"uploadFile",
+			"updateDlg",
+			"addSetting",
+			"deldlg",
+			"operateEvents",
+			"toolbar",
+			"devName",
+			"operateEvents",
+			"devName",
+			"devNameEvents",
+			"12字符",
+			"toolbar",
+			"固件备注",
+			"dateTimeSel",
+			"operateEvents",
+			"3000",
+			"setting",
+			"dateTimeSel",
+			"最近7天",
+			"dateTimeSel",
+			"toolbar",
 			"addBlackBtn",
 			"addBlackDlg",
 			"addBlack",
@@ -499,32 +541,33 @@
 			[
 				{
 					"buffer": 0,
-					"file": "html/apUser.html",
+					"file": "html/account.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 31706,
+						"buffer_size": 42837,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								14078,
-								14078
+								39604,
+								39604
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
 							"is_init_dirty_state": false,
+							"open_with_edit": true,
 							"origin_encoding": "UTF-8",
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6826.0,
+						"translation.y": 24136.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -532,19 +575,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "html/index.html",
+					"file": "html/gps.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 67364,
+						"buffer_size": 13074,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								14444,
-								14444
+								1643,
+								1643
 							]
 						],
 						"settings":
@@ -552,12 +595,10 @@
 							"auto_complete": false,
 							"is_init_dirty_state": false,
 							"origin_encoding": "UTF-8",
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 574.0,
+						"translation.y": 174.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -568,7 +609,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 36.0
+		"height": 37.0
 	},
 	"input":
 	{
@@ -605,7 +646,7 @@
 	"project": "yunac.sublime-project",
 	"replace":
 	{
-		"height": 82.0
+		"height": 70.0
 	},
 	"save_all_on_build": true,
 	"select_file":
