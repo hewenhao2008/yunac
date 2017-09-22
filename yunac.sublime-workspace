@@ -136,19 +136,10 @@
 	"buffers":
 	[
 		{
-			"file": "html/account.html",
+			"file": "html/setting.html",
 			"settings":
 			{
-				"buffer_size": 42837,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "html/gps.html",
-			"settings":
-			{
-				"buffer_size": 13074,
+				"buffer_size": 34423,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -263,6 +254,8 @@
 	],
 	"file_history":
 	[
+		"/D/Project/web/yunac/html/account.html",
+		"/D/Project/web/yunac/html/gps.html",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/pages/scripts/ui-tree.js",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/admin_1/ui_tree.html",
 		"/C/Users/zjj/Desktop/dateLog-2017-09-20.log",
@@ -293,7 +286,6 @@
 		"/D/Project/web/yunac/assets/global/plugins/js.cookie-2.1.4.js",
 		"/C/Users/zjj/Desktop/js.cookie-2.1.4.min.js",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.js",
-		"/D/Project/web/yunac/html/gps.html",
 		"/D/Project/web/myapp/views/index.ejs",
 		"/D/Project/web/frameMini2/html_mini/index - 副本.html",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/admin_1/index - 副本.html",
@@ -389,8 +381,7 @@
 		"/D/React/reactJs/public/components/About.js",
 		"/D/React/reactJs/public/components/Topics.js",
 		"/D/React/reactJs/src/App.js",
-		"/D/React/reactJs/public/App.js",
-		"/D/React/reactJs/public/index.html"
+		"/D/React/reactJs/public/App.js"
 	],
 	"find":
 	{
@@ -536,69 +527,35 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "html/account.html",
+					"file": "html/setting.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 42837,
+						"buffer_size": 34423,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								39604,
-								39604
+								15568,
+								15568
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"is_init_dirty_state": false,
-							"open_with_edit": true,
-							"origin_encoding": "UTF-8",
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 24136.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "html/gps.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13074,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1643,
-								1643
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"is_init_dirty_state": false,
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 174.0,
+						"translation.y": 8434.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
