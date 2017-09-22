@@ -426,7 +426,10 @@
                             <form class="form-horizontal form-row-seperated">
                                 <div class="form-body">
                                     <div class="form-group">
-                                        <div id="powerTree"> </div>
+                                        <label class="control-label col-md-3">权限选择</label>
+                                        <div class="col-md-6">
+                                            <div id="powerTree"> </div>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
@@ -473,6 +476,10 @@
         // 权限树
         $('#powerTree').jstree({
             'plugins': ["checkbox", "types"],
+            "checkbox": {
+                "keep_selected_style": false,
+                "visible": true,
+            },
             'core': {
                 "themes": {
                     "responsive": false
@@ -530,7 +537,7 @@
                             "selected": true
                         }
                     }, {
-                        "text": "代理商管理",
+                        "text": "客户管理",
                         "state": {
                             "selected": true
                         }

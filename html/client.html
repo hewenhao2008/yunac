@@ -386,7 +386,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title">代理商简称</h4>
+                    <h4 class="modal-title">客户简称</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -404,12 +404,12 @@
             </div>
         </div>
     </div>
-    <div class="modal fade in" id="roleDlg" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+    <div class="modal fade in" id="roleNameDlg" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title">客户角色</h4>
+                    <h4 class="modal-title">角色名称</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -417,7 +417,41 @@
                             <form class="form-horizontal form-row-seperated">
                                 <div class="form-body">
                                     <div class="form-group">
-                                        <label class="control-label col-md-3">客户角色</label>
+                                        <div class="row">
+                                            <label class="control-label col-md-3">角色名称</label>
+                                            <div class="col-md-6">
+                                                <input type="text" id="roleNameStr" class="form-control" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn red btn-outline" data-dismiss="modal">取消
+                    </button>
+                    <button type="button" class="btn green" data-dismiss="modal">保存
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade in" id="roleDlg" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">角色选择</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form class="form-horizontal form-row-seperated">
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">所属角色</label>
                                         <select class="selectpicker col-md-6">
                                             <option>景区</option>
                                             <option>监控</option>
@@ -551,23 +585,26 @@
                             <form class="form-horizontal form-row-seperated">
                                 <div class="form-body">
                                     <div class="form-group">
-                                        <div id="powerTree2"> </div>
+                                        <label class="control-label col-md-3">权限选择</label>
+                                        <div class="col-md-6">
+                                            <div id="powerTree2"> </div>
+                                        </div>
                                     </div>
-                                </div>
                             </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn red btn-outline" data-dismiss="modal">取消
-                    </button>
-                    <button type="button" class="btn green" data-dismiss="modal" id="updateOk">立即保存
-                    </button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn red btn-outline" data-dismiss="modal">取消
+                        </button>
+                        <button type="button" class="btn green" data-dismiss="modal" id="updateOk">立即保存
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade in" id="delDlg" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+    <div class="modal fade in" id="delDlg2" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -575,7 +612,26 @@
                     <h4 class="modal-title">删除客户</h4>
                 </div>
                 <div class="modal-body">
-                    将会同步删除此客户下的所有账号和角色，确认要删除此客户吗？
+                    将会删除此客户下的所有账号，确认删除吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn red btn-outline" data-dismiss="modal">取消
+                    </button>
+                    <button type="button" id="saveSetting" class="btn green" data-dismiss="modal" id="setDevParamOk">确认删除
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade in" id="delRoleDlg" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">删除角色</h4>
+                </div>
+                <div class="modal-body">
+                    只有还未使用的角色才能删除，确认要删除此角色吗？
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn red btn-outline" data-dismiss="modal">取消
@@ -971,8 +1027,9 @@
                 valign: 'middle',
                 sortable: false,
                 formatter: function(value, row, index) {
-                    var info = '<a class="roleEdit btn blue btn-circle btn-outline" style="margin-right: 5px" href="javascript:void(0)" >' + '<i class="fa fa-user-o" style="margin-right: 5px;"></i>' + '权限管理' + '</a>';
-                    return (info);
+                    var info = '<a class="roleEdit btn blue btn-circle btn-outline" style="margin-right: 15px" href="javascript:void(0)" >' + '<i class="fa fa-user-o" style="margin-right: 5px;"></i>' + '权限管理' + '</a>';
+                    var del = '<a class="delRole btn red btn-circle btn-outline" style="margin-right: 5px" href="javascript:void(0)" >' + '<i class="fa fa-trash-o" style="margin-right: 5px;"></i>' + '删除' + '</a>';
+                    return (info + del);
                 },
                 events: 'operateRoleEvents'
             }],
@@ -1065,11 +1122,19 @@
                 "file": {
                     "icon": "fa fa-file icon-state-warning icon-lg"
                 }
-            }
+            },
+            "checkbox": {
+                "keep_selected_style": false,
+                "visible": true,
+            },
         });
 
         $('#powerTree2').jstree({
             'plugins': ["checkbox", "types"],
+            "checkbox": {
+                "keep_selected_style": false,
+                "visible": true,
+            },
             'core': {
                 "themes": {
                     "responsive": false
@@ -1168,11 +1233,11 @@
     window.roleEvents = {
         'click .editName': function(e, value, row, index) {
             e.preventDefault();
-            $("#devName").modal();
+            $("#roleDlg").modal();
         }
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////
     // 账号管理
     window.operateEvents = {
         'click .account': function(e, value, row, index) {
@@ -1181,7 +1246,7 @@
         },
         'click .delClient': function(e, value, row, index) {
             e.preventDefault();
-            $("#delDlg").modal();
+            $("#delDlg2").modal();
         },
     }
 
@@ -1191,8 +1256,24 @@
         'click .roleEdit': function(e, value, row, index) {
             e.preventDefault();
             $("#powerDlg").modal();
+        },
+        'click .delRole': function(e, value, row, index) {
+            e.preventDefault();
+            $("#delRoleDlg").modal();
         }
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // 角色名称
+    window.roleNameEvents = {
+        'click .editName': function(e, value, row, index) {
+            e.preventDefault();
+            $('#roleNameStr').val(value);
+            $("#roleNameDlg").modal();
+        }
+    }
+
+
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
