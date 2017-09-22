@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"backg",
+				"background-color"
+			],
+			[
+				"add",
+				"addClientDlg"
+			],
+			[
 				"power",
 				"powerDlg"
 			],
@@ -62,10 +70,6 @@
 			[
 				"vl",
 				"vlan.html"
-			],
-			[
-				"add",
-				"addSSID"
 			],
 			[
 				"Pro",
@@ -136,10 +140,19 @@
 	"buffers":
 	[
 		{
-			"file": "html/setting.html",
+			"file": "html/menu.html",
 			"settings":
 			{
-				"buffer_size": 34423,
+				"buffer_size": 22148,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "html/client.html",
+			"settings":
+			{
+				"buffer_size": 67957,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -250,31 +263,36 @@
 	"expanded_folders":
 	[
 		"/D/Project/web/yunac",
+		"/D/Project/web/yunac/assets/global",
+		"/D/Project/web/yunac/assets/global/plugins",
+		"/D/Project/web/yunac/assets/global/plugins/iconfont",
+		"/D/Project/web/yunac/assets/global/plugins/jstree/dist",
 		"/D/Project/web/yunac/html"
 	],
 	"file_history":
 	[
+		"/D/Project/web/yunac/html/menu.html",
+		"/D/Project/web/yunac/html/client.html",
+		"/D/Project/web/yunac/html/tanzhen.html",
+		"/D/Project/web/yunac/html/tanzhenUser.html",
+		"/D/Project/web/yunac/html/version.html",
 		"/D/Project/web/yunac/html/account.html",
+		"/D/Project/web/yunac/html/apUser.html",
+		"/D/Project/web/yunac/html/authServer.html",
+		"/D/Project/web/yunac/html/group.html",
+		"/D/Project/web/yunac/html/index.html",
+		"/D/Project/web/yunac/html/log.html",
 		"/D/Project/web/yunac/html/gps.html",
+		"/D/Project/web/yunac/html/setting.html",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/pages/scripts/ui-tree.js",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/admin_1/ui_tree.html",
 		"/C/Users/zjj/Desktop/dateLog-2017-09-20.log",
-		"/D/Project/web/yunac/html/client.html",
-		"/D/Project/web/yunac/html/index.html",
-		"/D/Project/web/yunac/html/version.html",
-		"/D/Project/web/yunac/html/tanzhen.html",
-		"/D/Project/web/yunac/html/authServer.html",
-		"/D/Project/web/yunac/html/group.html",
-		"/D/Project/web/yunac/html/apUser.html",
-		"/D/Project/web/yunac/html/tanzhenUser.html",
-		"/D/Project/web/yunac/html/log.html",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/admin_1/index.html",
 		"/D/Project/web/bootstrap-daterangepicker/demo.html",
 		"/D/Project/web/bootstrap-daterangepicker/daterangepicker.js",
 		"/D/Project/web/yunac/html/test.html",
 		"/D/Project/web/yunac/html/test",
 		"/D/Project/web/yunac/html/peizhi.html",
-		"/D/Project/web/yunac/html/setting.html",
 		"/D/Project/web/yunac/assets/global/plugins/iconfont/iconfont.css",
 		"/D/Project/web/yunac/html/wifisetting.html",
 		"/D/Project/web/yunac/html/group.js",
@@ -380,8 +398,7 @@
 		"/D/React/reactJs/src/BasicExample.js",
 		"/D/React/reactJs/public/components/About.js",
 		"/D/React/reactJs/public/components/Topics.js",
-		"/D/React/reactJs/src/App.js",
-		"/D/React/reactJs/public/App.js"
+		"/D/React/reactJs/src/App.js"
 	],
 	"find":
 	{
@@ -401,6 +418,67 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"powerTree2",
+			"powerTree",
+			"power",
+			"porlet-body",
+			"powertree",
+			"powerTree",
+			"powertree",
+			"jstree",
+			"del",
+			"delDlg2",
+			"delDlg",
+			"delClient",
+			"delDlg",
+			"delRole",
+			"delClient",
+			"delDlg",
+			"powerTree",
+			"addRoleDlg",
+			"power",
+			"checkbox",
+			"delClient",
+			"operateRoleEvents",
+			"权限管理",
+			"delClient",
+			"del",
+			"roleNameEvents",
+			"roleNameDlg",
+			"roleNameEvents",
+			"客户",
+			"客户角色",
+			"客户",
+			"roleEvents",
+			"roleDlg",
+			"代理商简称",
+			"powerTree",
+			"powerDlg",
+			"roleEdit",
+			"权限管理",
+			"addRoleDlg",
+			"power",
+			"delDlg",
+			"account",
+			"delDlg",
+			"15px",
+			"权限",
+			"权限管理",
+			"toolbar",
+			"operateEvents",
+			"addClientDlg",
+			"roleDlg",
+			"form-horizontal",
+			"update",
+			"updateDlg",
+			"update",
+			"updateDlg",
+			"update",
+			"uploadFile",
+			"dlg",
+			"update",
+			"updateDlg",
+			"devNameEvents",
 			"iconfont",
 			"powerDlg",
 			"setting",
@@ -467,46 +545,7 @@
 			"tabContentPage",
 			"iconfont",
 			"fa fa-gift",
-			"portlet-body form",
-			"static",
-			"span",
-			"tableTab0",
-			" icon-layers font-blue",
-			"iconfont",
-			"colspan",
-			"window.href",
-			"window.",
-			"updateDlg",
-			"event",
-			"iconfont",
-			"overlay",
-			"saveMarker",
-			"../assets",
-			"showLoading",
-			"delSSID",
-			"ssid",
-			"uncheckAll",
-			"checkAll",
-			"复位",
-			"CPU占用率",
-			"vlan",
-			"operateEvents",
-			"保存",
-			"新增SSID",
-			"已连接终端",
-			"arrow",
-			">\n",
-			"css",
-			"\"codeintel_selected_catalogs",
-			"analytics.js",
-			"update",
-			"add",
-			"editable",
-			"homepage",
-			"></",
-			"BrowserRouter",
-			"BrowserRoutern",
-			"router"
+			"portlet-body form"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -532,19 +571,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "html/setting.html",
+					"file": "html/menu.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 34423,
+						"buffer_size": 22148,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								15568,
-								15568
+								20965,
+								20965
 							]
 						],
 						"settings":
@@ -555,10 +594,40 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 8434.0,
+						"translation.y": 11057.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "html/client.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 67957,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								61204,
+								61214
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 37457.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

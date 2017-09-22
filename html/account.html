@@ -176,6 +176,12 @@
                                     <span class="selected"></span>
                                 </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="menu.html" class="nav-link ">
+                                    <i class="iconfont icon-caidan" style="font-size: 20px;"></i>
+                                    <span class="title">菜单管理</span>
+                                </a>
+                                </li>
                             </ul>
                         </li>
                         <!--                         <li class="nav-item  ">
@@ -476,6 +482,17 @@
         // 权限树
         $('#powerTree').jstree({
             'plugins': ["checkbox", "types"],
+            "types": {
+                "folder": {
+                    "icon": "fa fa-folder icon-state-info icon-lg"
+                },
+                "file": {
+                    "icon": "fa fa-file icon-state-warning icon-lg"
+                },
+                "root": {
+                    "icon": "fa fa-tree icon-state-success icon-lg"
+                }
+            },
             "checkbox": {
                 "keep_selected_style": false,
                 "visible": true,
@@ -485,74 +502,85 @@
                     "responsive": false
                 },
                 'data': [{
-                    "text": "设备管理",
+                    "text": "根目录",
                     "state": {
                         "opened": true,
                     },
+                    "type": "root",
                     "children": [{
-                        "text": "AP管理",
+                        "text": "设备管理",
                         "state": {
-                            "selected": true
-                        }
-                    }, {
-                        "text": "探针管理",
-                        "state": {
-                            "selected": true
-                        }
-                    }, {
-                        "text": "认证服务器管理",
-                        "state": {
-                            "selected": true
+                            "opened": true,
                         },
+                        "type": "folder",
+                        "children": [{
+                            "text": "AP管理",
+                            "state": {
+                                "selected": true
+                            },
+                            "type": "file",
+                        }, {
+                            "text": "探针管理",
+                            "state": {
+                                "selected": true
+                            },
+                            "type": "file",
+                        }, {
+                            "text": "认证服务器管理",
+                            "state": {
+                                "selected": true
+                            },
+                            "type": "file",
+                        }, {
+                            "text": "分组管理",
+                            "state": {
+                                "selected": true
+                            },
+                            "type": "file",
+                        }, ]
                     }, {
-                        "text": "分组管理",
+                        "text": "用户管理",
                         "state": {
-                            "selected": true
+                            "opened": true,
                         },
-                    }, ]
-                }, {
-                    "text": "用户管理",
-                    "state": {
-                        "opened": true,
-                    },
-                    "children": [{
-                        "text": "AP用户",
-                        "state": {
-                            "selected": true
-                        }
+                        "type": "folder",
+                        "children": [{
+                            "text": "AP用户",
+                            "state": {
+                                "selected": true
+                            },
+                            "type": "file",
+                        }, {
+                            "text": "探针用户",
+                            "state": {
+                                "selected": true
+                            },
+                            "type": "file",
+                        }],
                     }, {
-                        "text": "探针用户",
+                        "text": "系统管理",
                         "state": {
-                            "selected": true
-                        }
-                    }],
-                }, {
-                    "text": "系统管理",
-                    "state": {
-                        "opened": true,
-                    },
-                    "children": [{
-                        "text": "日志管理",
-                        "state": {
-                            "selected": true
-                        }
-                    }, {
-                        "text": "客户管理",
-                        "state": {
-                            "selected": true
-                        }
+                            "opened": true,
+                        },
+                        "type": "folder",
+                        "children": [{
+                            "text": "日志管理",
+                            "state": {
+                                "selected": true
+                            },
+                            "type": "file",
+                        }, {
+                            "text": "客户管理",
+                            "state": {
+                                "selected": true
+                            },
+                            "type": "file",
+                        }]
                     }]
                 }]
             },
-            "types": {
-                "default": {
-                    "icon": "fa fa-folder icon-state-warning icon-lg"
-                },
-                "file": {
-                    "icon": "fa fa-file icon-state-warning icon-lg"
-                }
-            }
         });
+        //////////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////////////////////////////
         // 初始化日期选择控件
         $('#dateTimeSel').daterangepicker({
