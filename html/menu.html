@@ -24,6 +24,7 @@
     <link href="../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet" type="text/css" />
     <link href="../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
     <link href="../assets/global/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-sweetalert/sweetalert.css" type="text/css" rel="stylesheet">
 </head>
 <!-- END HEAD -->
 
@@ -262,11 +263,11 @@
                                         <span class="caption-subject font-blue sbold uppercase">菜单管理</span>
                                     </div>
                                 </div>
-                                <div class="portlet-body">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <form class="form-horizontal form-row-seperated">
-                                                <div class="form-body">
+                                <div class="portlet-body form">
+                                    <form class="form-horizontal">
+                                        <div class="form-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label col-md-3">菜单</label>
                                                         <div class="col-md-3">
@@ -274,11 +275,35 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </form>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">菜单名称：</label>
+                                                        <p class="form-control-static" id="selMenuName"> 未选中菜单 </p>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">菜单链接：</label>
+                                                        <p class="form-control-static" id="selMenuAddress"> http:// </p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                    </div>
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn green" id="saveTree">
+                                                                <i class="fa fa-check"></i> 保存
+                                                            </button>
+                                                            <!-- <button type="button" class="btn red">
+    <i class="fa fa-warning"></i> 复位
+</button> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                             <!-- END EXAMPLE TABLE PORTLET-->
@@ -297,6 +322,75 @@
         <!-- END CONTAINER -->
     </div>
     <!-- modal-dialog Begin -->
+    <div class="modal fade in" id="editMenuDlg" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">编辑菜单链接</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form class="form-horizontal form-row-seperated">
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="control-label col-md-3">菜单id：</label>
+                                            <div class="col-md-6">
+                                                <p class="form-control-static" id="editMenuId"> id </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="control-label col-md-3">菜单名称：</label>
+                                            <div class="col-md-6">
+                                                <p class="form-control-static" id="editMenuName"> init </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="control-label col-md-3">菜单链接</label>
+                                            <div class="col-md-6">
+                                                <input type="text" id="menuAddress" class="form-control" value="http://">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn red btn-outline" data-dismiss="modal">取消
+                    </button>
+                    <button type="button" class="btn green" data-dismiss="modal" id="saveMenuAddress">保存
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade in" id="saveTreeDlg" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">保存菜单</h4>
+                </div>
+                <div class="modal-body">
+                    将会保存当前配置的菜单，确认保存吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn red btn-outline" data-dismiss="modal">取消
+                    </button>
+                    <button type="button" class="btn green" data-dismiss="modal" id="saveCurTreeBtn">立即保存
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- modal-dialog End -->
     <!--[if lt IE 9]>
 <script src="../assets/global/plugins/respond.min.js"></script>
@@ -322,6 +416,7 @@
     <script src="../assets/global/plugins/tableExport-jquery-plugin/xlsx.core.min.js"></script>
     <script src="../assets/global/plugins/bootstrap-table-master/bootstrap-table-export.js"></script>
     <script src="../assets/global/plugins/jstree/dist/jstree.min.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/bootstrap-sweetalert/sweetalert.min.js" type="text/javascript"></script>
     <script type="text/javascript">
     $(document).ready(function() {
         ///////////////////////////////////////////////////////////////////////////////////////////
@@ -343,24 +438,133 @@
                 "items": {
                     "create": {
                         "label": "新增菜单",
-                        "icon": "fa fa-plus",
+                        "icon": "fa fa-plus font-blue",
                         "action": function(data) {
-                            var inst = $.jstree.reference(data.reference);
-                            var obj = inst.get_node(data.reference); //获得当前节点所有属性
-                            var type = inst.get_type(obj);
+                            var ref = $('#powerTree').jstree(true);
+                            var obj = ref.get_node(data.reference); //获得当前节点所有属性
+                            var type = ref.get_type(obj);
                             var nodeData = { "type": "file", "state": { "opened": true } };
                             if (type == "root") {
                                 nodeData.type = "folder";
                             } else if (type == "file") {
-                                alert("已经是二级菜单，无法继续创建！");
+                                swal({
+                                    title: "创建菜单失败",
+                                    text: "已经是二级菜单，无法继续创建！",
+                                    type: "error",
+                                    showConfirmButton: true,
+                                    confirmButtonClass: "btn-danger",
+                                    confirmButtonText: "确认",
+                                    showCancelButton: false,
+                                    closeOnConfirm: true
+                                })
                                 return false;
                             }
-                            var node = inst.create_node(obj, nodeData);
+                            // $("#addMenuDlg").modal();
+                            var node = ref.create_node(obj, nodeData);
                             if (node) {
-                                inst.edit(node);
+                                ref.edit(node);
                             }
                         }
-                    }
+                    },
+                    "rename": {
+                        "label": "修改菜单名称",
+                        "icon": "fa fa-pencil font-blue",
+                        "action": function(data) {
+                            var ref = $('#powerTree').jstree(true);
+                            var obj = ref.get_node(data.reference);
+                            var type = ref.get_type(obj);
+                            if (type == "root") {
+                                // 不能修改根目录
+                                swal({
+                                    title: "修改菜单名称失败",
+                                    text: "不可修改根目录名称！",
+                                    type: "error",
+                                    showConfirmButton: true,
+                                    confirmButtonClass: "btn-danger",
+                                    confirmButtonText: "确认",
+                                    showCancelButton: false,
+                                    closeOnConfirm: true
+                                })
+                                return false;
+                            };
+                            if (obj) {
+                                ref.edit(obj);
+                            }
+                        }
+                    },
+                    "ccp": {
+                        "label": "编辑菜单链接",
+                        "icon": "fa fa-pencil font-blue",
+                        "action": function(data) {
+                            var ref = $('#powerTree').jstree(true);
+                            var obj = ref.get_node(data.reference);
+                            var type = ref.get_type(obj);
+                            if (type == "root") {
+                                // 不能修改根目录
+                                swal({
+                                    title: "修改菜单链接失败",
+                                    text: "不可修改根目录链接！",
+                                    type: "error",
+                                    showConfirmButton: true,
+                                    confirmButtonClass: "btn-danger",
+                                    confirmButtonText: "确认",
+                                    showCancelButton: false,
+                                    closeOnConfirm: true
+                                })
+                                return false;
+                            };
+                            $("#editMenuName").text(ref.get_text(obj));
+                            $("#editMenuId").text(obj.id);
+                            $("#menuAddress").val(Cookies.get(obj.id));
+                            $("#editMenuDlg").modal();
+                        }
+                    },
+                    "remove": {
+                        "label": "删除菜单",
+                        "icon": "fa fa-remove font-red",
+                        "action": function(data) {
+                            var ref = $('#powerTree').jstree(true);
+                            var obj = ref.get_node(data.reference);
+                            var type = ref.get_type(obj);
+                            if (type == "root") {
+                                // 删除根目录
+                                swal({
+                                    title: "删除菜单失败",
+                                    text: "不可删除根目录！",
+                                    type: "error",
+                                    showConfirmButton: true,
+                                    confirmButtonClass: "btn-danger",
+                                    confirmButtonText: "确认",
+                                    showCancelButton: false,
+                                    closeOnConfirm: true
+                                })
+                                return false;
+                            } else if (type == "folder") {
+                                // 删除一级菜单，如果没有二级菜单则可删，否则不可删
+                                var childs = ref.get_children_dom(obj);
+                                if (!childs.length) {
+                                    ref.delete_node(obj);
+                                    return true;
+                                } else {
+                                    swal({
+                                        title: "删除菜单失败",
+                                        text: "请先删除菜单下的子菜单！",
+                                        type: "error",
+                                        showConfirmButton: true,
+                                        confirmButtonClass: "btn-danger",
+                                        confirmButtonText: "确认",
+                                        showCancelButton: false,
+                                        closeOnConfirm: true
+                                    })
+                                    return false;
+                                }
+                            } else {
+                                // 删除二级菜单
+                                ref.delete_node(obj);
+                            }
+                        }
+                    },
+
                 }
             },
             'core': {
@@ -378,6 +582,45 @@
                 }]
             },
         });
+
+        //////////////////////////////////////////////////////////////////////////////////////////
+        // 选中树结点
+        $('#powerTree').on("activate_node.jstree", function(e, data) {
+            var ref = $('#powerTree').jstree(true);
+            $("#selMenuName").text(ref.get_text(data.node));
+            var value = Cookies.get(data.node.id);
+            if (typeof(value) == "undefined") {
+                $("#selMenuAddress").text("");
+            } else {
+                $("#selMenuAddress").text(value);
+            }
+        });
+        //////////////////////////////////////////////////////////////////////////////////////////
+        // 保存树链接（key为id）
+        $('#saveMenuAddress').click(function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var key = $("#editMenuId").text();
+            var value = $("#menuAddress").val();
+            Cookies.set(key, value);
+            $("#selMenuAddress").text(value);
+            $('#editMenuDlg').modal('hide');
+
+        })
+        //////////////////////////////////////////////////////////////////////////////////////////
+        // 保存当前设置的菜单
+        $('#saveTree').click(function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $("#saveTreeDlg").modal();
+        })
+        $('#saveCurTreeBtn').click(function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var treeData = $('#powerTree').jstree(true).get_json();
+            alert(JSON.stringify(treeData));
+            $("#saveTreeDlg").modal('hide');
+        })
     })
     </script>
 </body>
