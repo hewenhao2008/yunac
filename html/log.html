@@ -378,12 +378,20 @@
                 }
             },
             function(start, end) {
-                $('#dateTimeSel span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-                console.log(start.format('MMMM D, YYYY') + end.format('MMMM D, YYYY'));
+                if (start._i == 'all') {
+                    $('#dateTimeSel span').html('全部');
+                } else {
+                    var startStr = start.format('YYYY/MMMM/D');
+                    var endStr = end.format('YYYY/MMMM/D');
+                    startStr = toChinese(startStr);
+                    endStr = toChinese(endStr);
+                    $('#dateTimeSel span').html(startStr + ' - ' + endStr);
+                    // console.log(start.format('MMMM D, YYYY') + end.format('MMMM D, YYYY'));
+                }
             }
         );
         //Set the initial state of the picker label
-        $('#dateTimeSel span').html(moment().subtract('days', 29).format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+        $('#dateTimeSel span').html(toChinese(moment().subtract('days', 29).format('YYYY/MMMM/D')) + ' - ' + toChinese(moment().format('YYYY/MMMM/D')));
         // 初始化表格
         $('#mytable').bootstrapTable({
             // search: true, // 显示搜索框
@@ -519,6 +527,36 @@
         if (str_length < len) {
             return str;
         }
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // 
+    function toChinese(str) {
+        if (str.indexOf("January") >= 0) {
+            str = str.replace("January", "1")
+        } else if (str.indexOf("February") >= 0) {
+            str = str.replace("February", "2")
+        } else if (str.indexOf("March") >= 0) {
+            str = str.replace("March", "3")
+        } else if (str.indexOf("April") >= 0) {
+            str = str.replace("April", "4")
+        } else if (str.indexOf("May") >= 0) {
+            str = str.replace("May", "5")
+        } else if (str.indexOf("June") >= 0) {
+            str = str.replace("June", "6")
+        } else if (str.indexOf("July") >= 0) {
+            str = str.replace("July", "7")
+        } else if (str.indexOf("August") >= 0) {
+            str = str.replace("August", "8")
+        } else if (str.indexOf("September") >= 0) {
+            str = str.replace("September", "9")
+        } else if (str.indexOf("October") >= 0) {
+            str = str.replace("October", "10")
+        } else if (str.indexOf("November") >= 0) {
+            str = str.replace("November", "11")
+        } else if (str.indexOf("December") >= 0) {
+            str = str.replace("December", "12")
+        }
+        return str;
     }
     </script>
 </body>
