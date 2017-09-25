@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"start",
+				"startStr〔variable〕"
+			],
+			[
+				"save",
+				"saveTreeDlg"
+			],
+			[
+				"type",
+				"typeof〔keyword〕"
+			],
+			[
+				"font-",
+				"font-blue"
+			],
+			[
 				"backg",
 				"background-color"
 			],
@@ -139,24 +155,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "html/menu.html",
-			"settings":
-			{
-				"buffer_size": 22148,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "html/client.html",
-			"settings":
-			{
-				"buffer_size": 67957,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -263,25 +261,23 @@
 	"expanded_folders":
 	[
 		"/D/Project/web/yunac",
-		"/D/Project/web/yunac/assets/global",
-		"/D/Project/web/yunac/assets/global/plugins",
-		"/D/Project/web/yunac/assets/global/plugins/iconfont",
-		"/D/Project/web/yunac/assets/global/plugins/jstree/dist",
 		"/D/Project/web/yunac/html"
 	],
 	"file_history":
 	[
-		"/D/Project/web/yunac/html/menu.html",
-		"/D/Project/web/yunac/html/client.html",
 		"/D/Project/web/yunac/html/tanzhen.html",
-		"/D/Project/web/yunac/html/tanzhenUser.html",
 		"/D/Project/web/yunac/html/version.html",
-		"/D/Project/web/yunac/html/account.html",
-		"/D/Project/web/yunac/html/apUser.html",
+		"/D/Project/web/yunac/html/wifisetting.html",
 		"/D/Project/web/yunac/html/authServer.html",
-		"/D/Project/web/yunac/html/group.html",
-		"/D/Project/web/yunac/html/index.html",
+		"/D/Project/web/yunac/html/client.html",
 		"/D/Project/web/yunac/html/log.html",
+		"/D/Project/web/yunac/html/index.html",
+		"/D/Project/web/yunac/html/account.html",
+		"/D/Project/web/yunac/html/menu.html",
+		"/D/Project/web/yunac/server.js",
+		"/D/Project/web/yunac/html/tanzhenUser.html",
+		"/D/Project/web/yunac/html/apUser.html",
+		"/D/Project/web/yunac/html/group.html",
 		"/D/Project/web/yunac/html/gps.html",
 		"/D/Project/web/yunac/html/setting.html",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/pages/scripts/ui-tree.js",
@@ -294,11 +290,9 @@
 		"/D/Project/web/yunac/html/test",
 		"/D/Project/web/yunac/html/peizhi.html",
 		"/D/Project/web/yunac/assets/global/plugins/iconfont/iconfont.css",
-		"/D/Project/web/yunac/html/wifisetting.html",
 		"/D/Project/web/yunac/html/group.js",
 		"/D/Project/web/yunac/assets/global/plugins/ie8.fix.min.js",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/pages/scripts/ui-blockui.js",
-		"/D/Project/web/yunac/server.js",
 		"/D/Project/web/yunac/package.json",
 		"/D/Project/web/yunac/html/cookieTest.html",
 		"/D/Project/web/yunac/assets/global/plugins/js.cookie-2.1.4.js",
@@ -418,6 +412,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"start, end",
+			"start end",
+			"start",
+			"saveCurTreeBtn",
+			"editMenuId",
+			"selMenuAddress",
+			"selMenuName",
+			"Cookies",
+			"saveMenuAddress",
+			"editMenuName",
+			"sweet",
+			"sweetalert",
 			"powerTree2",
 			"powerTree",
 			"power",
@@ -533,19 +539,7 @@
 			"rebootBtn",
 			"设备管理",
 			"group",
-			"userName",
-			"userNameDlg",
-			"userName",
-			"userNameDlg",
-			"userName",
-			"mytable",
-			"devTotals",
-			"下载",
-			"devNameEvents",
-			"tabContentPage",
-			"iconfont",
-			"fa fa-gift",
-			"portlet-body form"
+			"userName"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -566,70 +560,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "html/menu.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 22148,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								20965,
-								20965
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 11057.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "html/client.html",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 67957,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								61204,
-								61214
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 37457.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
