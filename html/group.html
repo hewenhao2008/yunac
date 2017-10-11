@@ -275,6 +275,11 @@
                                     </div>
                                 </div>
                                 <div class="portlet-body">
+                                    <div class="btn-group" id="toolbar">
+                                        <a class="btn btn-circle blue" href="javascript:;" data-toggle="dropdown" aria-expanded="false" id="addGroup">
+                                            <i class="fa fa-plus"></i> 新增分组
+                                        </a>
+                                    </div>
                                     <table id="mytable"></table>
                                 </div>
                             </div>
@@ -294,6 +299,84 @@
         <!-- END CONTAINER -->
     </div>
     <!-- modal-dialog Begin -->
+    <div class="modal fade in" id="addGroupDlg" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">新增分组</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form class="form-horizontal form-row-seperated">
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">分组名称</label>
+                                        <div class="col-md-6">
+                                            <input type="text" id="devNameInput" class="form-control" value="">
+                                            <span class="help-block"> 必填 </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">分组备注</label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" value="">
+                                        </div>
+                                    </div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn red btn-outline" data-dismiss="modal">取消
+                        </button>
+                        <button type="button" class="btn green" data-dismiss="modal" id="btnAddGroup">立即保存
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade in" id="editGroupDlg" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">修改分组</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form class="form-horizontal form-row-seperated">
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">分组名称</label>
+                                        <div class="col-md-6">
+                                            <input type="text" id="devNameInput" class="form-control" value="">
+                                            <span class="help-block"> 必填 </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">分组备注</label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" value="">
+                                        </div>
+                                    </div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn red btn-outline" data-dismiss="modal">取消
+                        </button>
+                        <button type="button" class="btn green" data-dismiss="modal" id="btnEditGroup">立即保存
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade in" id="delDlg" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -342,7 +425,7 @@
         // 初始化表格
         $('#mytable').bootstrapTable({
             search: true, // 显示搜索框
-            searchAlign: 'left',
+            // searchAlign: 'left',
             // sortName: 'mac', // 初始化排序字段
             // url: 'https://weiquaninfo.cn/json/data.json',   
             pagination: true, // 底部显示数量,
@@ -350,7 +433,7 @@
             pageSize: 5, //每页的记录行数
             pageList: [5, 10, 25, 50, 100], //可供选择的每页的行数
             striped: true,
-            // toolbar: '#toolbar',
+            toolbar: '#toolbar',
             showExport: true, // 导出（第三方）
             exportDataType: 'all', // 导出参数
             exportTypes: ['excel'], // 导出文件类型
@@ -370,9 +453,9 @@
                     // 限定12个字符以内
                     var result = "";
                     if (getLength(value) > 12) {
-                        result = '<div title=' + value + '>' + '<a class="editName">' + cutstr(value, 12) + '</a></div>';
+                        result = '<div title=' + value + '>' + cutstr(value, 12) + '</div>';
                     } else {
-                        result = '<a class="editName">' + value + '</a>';
+                        result = value;
                     }
                     return result;
                 },
@@ -408,8 +491,9 @@
                 valign: 'middle',
                 sortable: false,
                 formatter: function(value, row, index) {
+                    var edit = '<a class="edit btn blue btn-circle btn-outline" style="margin-right: 20px" href="javascript:void(0)" >' + '<i class="fa fa-pencil" style="margin-right: 5px;"></i>' + '修改' + '</a>';
                     var info = '<a class="delete btn red btn-circle btn-outline" style="margin-right: 10px" href="javascript:void(0)" >' + '<i class="fa  fa-trash-o" style="margin-right: 5px;"></i>' + '删除' + '</a>';
-                    return (info);
+                    return (edit + info);
                 },
                 events: 'operateEvents'
             }],
@@ -441,6 +525,37 @@
             })
         }
         $('#mytable').bootstrapTable('append', data);
+
+        /////////////////////////////////////////////////////////////////////////////////////////////
+        // 新增-编辑分组
+        $("#addGroup").click(function(e) {
+            e.preventDefault();
+            $("#addGroupDlg").modal();
+        });
+        $("#btnAddGroup").click(function(e) {
+            e.preventDefault();
+            App.alert({
+                place: 'append', // append or prepent in container 
+                type: 'success', // alert's type
+                message: '新增分组成功', // alert's message
+                close: true, // make alert closable
+                reset: true, // close all previouse alerts first
+                focus: true, // auto scroll to the alert after shown
+                closeInSeconds: '5', // auto close after defined seconds
+            });
+        });
+        $("#btnEditGroup").click(function(e) {
+            e.preventDefault();
+            App.alert({
+                place: 'append', // append or prepent in container 
+                type: 'success', // alert's type
+                message: '修改分组成功', // alert's message
+                close: true, // make alert closable
+                reset: true, // close all previouse alerts first
+                focus: true, // auto scroll to the alert after shown
+                closeInSeconds: '5', // auto close after defined seconds
+            });
+        });
     })
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -449,6 +564,10 @@
         'click .delete': function(e, value, row, index) {
             // alert("删除第" + (index + 1) + "行");
             $("#delDlg").modal();
+        },
+        'click .edit': function(e, value, row, index) {
+            // alert("删除第" + (index + 1) + "行");
+            $("#editGroupDlg").modal();
         }
     }
 

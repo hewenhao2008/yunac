@@ -163,6 +163,15 @@
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "html/log.html",
+			"settings":
+			{
+				"buffer_size": 29666,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
 		}
 	],
 	"build_system": "",
@@ -405,7 +414,7 @@
 	],
 	"find":
 	{
-		"height": 45.0
+		"height": 44.0
 	},
 	"find_in_files":
 	{
@@ -421,6 +430,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"operateEvents",
+			"selectpicker",
 			"dateTimeSel",
 			"portlet",
 			"inline",
@@ -546,9 +557,7 @@
 			"mytable",
 			"updateDlg",
 			"updateBtn",
-			"固件",
-			"固件版本",
-			"rebootDlg"
+			"固件"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -575,7 +584,7 @@
 				{
 					"buffer": 0,
 					"file": "html/index.html",
-					"semi_transient": true,
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 73912,
@@ -585,8 +594,8 @@
 						"selection":
 						[
 							[
-								57400,
-								57400
+								2760,
+								2760
 							]
 						],
 						"settings":
@@ -596,10 +605,40 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 44730.0,
+						"translation.y": 1336.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "html/log.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 29666,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1874,
+								1874
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
