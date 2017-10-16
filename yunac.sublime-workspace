@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"edit",
+				"editGroupDlg"
+			],
+			[
+				"add",
+				"addGroupDlg"
+			],
+			[
 				"start",
 				"startStr〔variable〕"
 			],
@@ -22,10 +30,6 @@
 			[
 				"backg",
 				"background-color"
-			],
-			[
-				"add",
-				"addClientDlg"
 			],
 			[
 				"power",
@@ -156,19 +160,10 @@
 	"buffers":
 	[
 		{
-			"file": "html/index.html",
+			"file": "html/group.html",
 			"settings":
 			{
-				"buffer_size": 73912,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "html/log.html",
-			"settings":
-			{
-				"buffer_size": 29666,
+				"buffer_size": 31689,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -283,13 +278,13 @@
 	],
 	"file_history":
 	[
+		"/D/Project/web/yunac/html/index.html",
 		"/D/Project/web/yunac/html/tanzhen.html",
 		"/D/Project/web/yunac/html/version.html",
 		"/D/Project/web/yunac/html/wifisetting.html",
 		"/D/Project/web/yunac/html/authServer.html",
 		"/D/Project/web/yunac/html/client.html",
 		"/D/Project/web/yunac/html/log.html",
-		"/D/Project/web/yunac/html/index.html",
 		"/D/Project/web/yunac/html/account.html",
 		"/D/Project/web/yunac/html/menu.html",
 		"/D/Project/web/yunac/server.js",
@@ -414,7 +409,7 @@
 	],
 	"find":
 	{
-		"height": 44.0
+		"height": 49.0
 	},
 	"find_in_files":
 	{
@@ -430,6 +425,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"已下发固件",
+			"operateEvents",
+			"配置",
+			"addGroupDlg",
+			"uploadFile",
+			"上传新固件",
+			"上传新",
+			"toolbar",
+			"toolbar2",
+			"#toolbar",
+			"设备管理",
 			"operateEvents",
 			"selectpicker",
 			"dateTimeSel",
@@ -546,18 +552,7 @@
 			"devNameEvents",
 			"label",
 			"config-demo",
-			"devName",
-			"devNameEvents",
-			"search",
-			"delDlg",
-			"toolbar2",
-			"toolbar",
-			"a:first",
-			"mytab",
-			"mytable",
-			"updateDlg",
-			"updateBtn",
-			"固件"
+			"devName"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -583,62 +578,35 @@
 			[
 				{
 					"buffer": 0,
-					"file": "html/index.html",
+					"file": "html/group.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 73912,
+						"buffer_size": 31689,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2760,
-								2760
+								11494,
+								11494
 							]
 						],
 						"settings":
 						{
+							"auto_complete": false,
+							"is_init_dirty_state": false,
+							"origin_encoding": "UTF-8",
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1336.0,
+						"translation.y": 568.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "html/log.html",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 29666,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1874,
-								1874
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
