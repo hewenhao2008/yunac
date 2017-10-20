@@ -336,6 +336,10 @@
                                                                 <label class="sr-only" for="versionSearch">version</label>
                                                                 <input type="text" class="form-control" id="versionSearch" placeholder="固件版本">
                                                             </div>
+                                                            <div class="form-group">
+                                                                <label class="sr-only" for="versionSearch">version</label>
+                                                                <input type="text" class="form-control" id="versionSearch" placeholder="设备类型">
+                                                            </div>
                                                         </form>
                                                         <form class="form-inline" role="form">
                                                             <div class="form-group">
@@ -911,6 +915,13 @@
                 },
                 events: 'gpsEvents',
             }, {
+                field: 'devType',
+                title: '设备类型',
+                align: 'center',
+                valign: 'middle',
+                sortable: true,
+                visible: true,
+            }, {
                 field: 'version',
                 title: '固件版本',
                 align: 'center',
@@ -943,10 +954,12 @@
                 align: 'center',
                 valign: 'middle',
                 sortable: false,
+                width: '250px',
                 formatter: function(value, row, index) {
                     var info = '<a class="setting btn blue btn-circle btn-outline" style="margin-right: 5px" href="javascript:void(0)" >' + '<i class="iconfont icon-peizhi" style="margin-right: 5px;"></i>' + '配置' + '</a>';
                     var refresh = '<a class="refresh btn green btn-circle btn-outline"  style="margin-right: 5px" href="javascript:void(0)" >' + '<i class="fa  fa-refresh" style="margin-right: 5px"></i>' + '刷新' + '</a>';
-                    return (info + refresh);
+                    var update = '<a class="update btn purple btn-circle btn-outline"  style="margin-right: 5px" href="javascript:void(0)" >' + '<i class="fa  fa-arrow-up" style="margin-right: 5px"></i>' + '升级' + '</a>';
+                    return (info + refresh + update);
                 },
                 events: 'operateEvents'
             }],
@@ -971,6 +984,7 @@
             regTime: '2017-08-30',
             updateTime: '2017-08-30',
             runMode: '路由',
+            devType: 'DB6000',
         }, {
             mac: 'ef:54:1r:bb:t1:23',
             name: '五号食堂一楼',
@@ -989,6 +1003,7 @@
             regTime: '2017-08-30',
             updateTime: '2017-09-04',
             runMode: 'AP',
+            devType: 'DB6000W-2',
         }, {
             mac: '0f:8y:bt:mn:t0:54',
             name: '3号写字楼18楼楼道口',
@@ -1007,6 +1022,7 @@
             regTime: '2017-08-30',
             updateTime: '2017-09-04',
             runMode: '路由',
+            devType: 'DB6000W-3',
         }];
         for (var i = 0; i < 20; i++) {
             data.push({
@@ -1027,6 +1043,7 @@
                 regTime: '2017-08-30',
                 updateTime: '2017-09-04',
                 runMode: 'AP',
+                devType: 'DB6000W-2',
             })
         }
         $('#mytable').bootstrapTable('append', data);
@@ -1136,6 +1153,17 @@
                     type: "error",
                     showConfirmButton: true,
                     confirmButtonClass: "btn-danger",
+                    confirmButtonText: "确认",
+                    showCancelButton: false,
+                    closeOnConfirm: true
+                })
+            } else if (hasDiffDevType(rows)) {
+                swal({
+                    title: "固件升级失败",
+                    text: "请选择相同类型的设备",
+                    type: "warning",
+                    showConfirmButton: true,
+                    confirmButtonClass: "btn-warning",
                     confirmButtonText: "确认",
                     showCancelButton: false,
                     closeOnConfirm: true
@@ -1412,6 +1440,9 @@
                     closeInSeconds: '5', // auto close after defined seconds
                 });
             }, 3000);
+        },
+        'click .update': function(e, value, row, index) {
+            $("#updateDlg").modal();
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1474,6 +1505,16 @@
             str = str.replace("December", "12")
         }
         return str;
+    }
+    ///////////////////////////////////////////////////////////////////////////////
+    // 分组修改
+    function hasDiffDevType(rows) {
+        for (var i = 1; i < rows.length; i++) {
+            if (rows[i].devType != rows[i - 1].devType) {
+                return true;
+            }
+        }
+        return false;
     }
     </script>
 </body>
