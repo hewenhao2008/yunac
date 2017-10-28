@@ -160,10 +160,19 @@
 	"buffers":
 	[
 		{
-			"file": "html/group.html",
+			"file": "html/index.html",
 			"settings":
 			{
-				"buffer_size": 31689,
+				"buffer_size": 75800,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "html/version.html",
+			"settings":
+			{
+				"buffer_size": 40207,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -278,9 +287,10 @@
 	],
 	"file_history":
 	[
-		"/D/Project/web/yunac/html/index.html",
-		"/D/Project/web/yunac/html/tanzhen.html",
 		"/D/Project/web/yunac/html/version.html",
+		"/D/Project/web/yunac/html/index.html",
+		"/D/Project/web/yunac/html/group.html",
+		"/D/Project/web/yunac/html/tanzhen.html",
 		"/D/Project/web/yunac/html/wifisetting.html",
 		"/D/Project/web/yunac/html/authServer.html",
 		"/D/Project/web/yunac/html/client.html",
@@ -290,7 +300,6 @@
 		"/D/Project/web/yunac/server.js",
 		"/D/Project/web/yunac/html/tanzhenUser.html",
 		"/D/Project/web/yunac/html/apUser.html",
-		"/D/Project/web/yunac/html/group.html",
 		"/D/Project/web/yunac/html/gps.html",
 		"/D/Project/web/yunac/html/setting.html",
 		"/C/Users/zjj/Desktop/metronic_v4.7.5/theme/assets/pages/scripts/ui-tree.js",
@@ -409,7 +418,7 @@
 	],
 	"find":
 	{
-		"height": 49.0
+		"height": 53.0
 	},
 	"find_in_files":
 	{
@@ -425,6 +434,30 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"uploadFile",
+			"dlg",
+			"update",
+			"updateDlg",
+			"updateDLg",
+			"mytable",
+			"设备管理",
+			"table",
+			"sweetalert",
+			"swal",
+			"历史统计",
+			"tab",
+			"iconfont",
+			"tab",
+			"hasDiffDevType",
+			"updateDlg",
+			"固件升级",
+			"operateEvents",
+			"固件升级",
+			"operateEvents",
+			"固件版本",
+			"设备",
+			"上传固件",
+			"固件上传",
 			"已下发固件",
 			"operateEvents",
 			"配置",
@@ -528,31 +561,7 @@
 			"operateEvents",
 			"toolbar",
 			"devName",
-			"operateEvents",
-			"devName",
-			"devNameEvents",
-			"12字符",
-			"toolbar",
-			"固件备注",
-			"dateTimeSel",
-			"operateEvents",
-			"3000",
-			"setting",
-			"dateTimeSel",
-			"最近7天",
-			"dateTimeSel",
-			"toolbar",
-			"addBlackBtn",
-			"addBlackDlg",
-			"addBlack",
-			"setDevsParam",
-			"gpsEvents",
-			"groupEvents",
-			"userEvents",
-			"devNameEvents",
-			"label",
-			"config-demo",
-			"devName"
+			"operateEvents"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -573,37 +582,67 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "html/group.html",
+					"file": "html/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 31689,
+						"buffer_size": 75800,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11494,
-								11494
+								42982,
+								42982
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"is_init_dirty_state": false,
-							"origin_encoding": "UTF-8",
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": true,
+							"word_wrap": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 568.0,
+						"translation.y": 26751.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "html/version.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 40207,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								28843,
+								28843
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 16835.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
